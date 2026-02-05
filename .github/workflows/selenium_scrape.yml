@@ -35,6 +35,10 @@ jobs:
     - name: Create outputs directory
       run: mkdir -p outputs
 
+    - name: Debug network
+      run: |
+        curl -I "https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init"
+
     - name: Run scraper
       run: python src/ti_plates_scraper.py
 
