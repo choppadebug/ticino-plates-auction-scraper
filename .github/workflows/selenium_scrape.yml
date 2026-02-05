@@ -36,7 +36,7 @@ jobs:
       run: mkdir -p outputs
 
     - name: Run scraper
-      run: python src/scrape.py
+      run: python src/ti_plates_scraper.py
 
     - name: Upload results as artifact
       if: always()
