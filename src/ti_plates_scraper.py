@@ -24,7 +24,19 @@ def main():
 
     try:
         driver.get("https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init")
+        time.sleep(3)  # Human-like load time
+
+        print("=== DEBUG ===")
         print("Title:", driver.title)
+        print("URL after load:", driver.current_url)
+        print("Page source length:", len(driver.page_source))
+        print("Contains 'tabContent':", 'tabContent' in driver.page_source)
+
+        # Save HTML for inspection
+        with open("debug_page.html", "w", encoding="utf-8") as f:
+            f.write(driver.page_source)
+        print("Debug HTML saved")
+        
         # Scraping logic
         plate_numbers = []
         starting_prices = []
@@ -34,6 +46,10 @@ def main():
         offers_numbers = []
 
         row_index = 1
+
+        # Scroll a bit to trigger lazy loading
+        driver.execute_script("window.scrollTo(0, 200);")
+        time.sleep(1)
     
         while True:
             try:
