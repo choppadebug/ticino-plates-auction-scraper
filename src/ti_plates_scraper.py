@@ -8,8 +8,13 @@ from datetime import datetime
 import csv
 from pathlib import Path
 import time
+import os
 
 def main():
+    # GitHub Actions uses proxy, local doesn't
+    proxy_enabled = os.getenv('USE_PROXY', 'false').lower() == 'true'
+    driver = setup_stealth_chrome(proxy_enabled=proxy_enabled)
+
     options = Options()
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
@@ -23,6 +28,9 @@ def main():
     out_file = output_dir / f"carie_auktion_{timestamp}.csv"
 
     try:
+        # TEST PROXY FIRST
+        driver.set_page_load_timeout(20)
+        print("🌐 Testing Ticino site directly...")
         driver.get("https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init")
         time.sleep(3)  # Human-like load time
 
@@ -36,7 +44,7 @@ def main():
         with open("debug_page.html", "w", encoding="utf-8") as f:
             f.write(driver.page_source)
         print("Debug HTML saved")
-        
+
         # Scraping logic
         plate_numbers = []
         starting_prices = []
@@ -121,18 +129,28 @@ def main():
         ):
             writer.writerow(row)
 
-def setup_stealth_chrome():
+def setup_stealth_chrome(proxy_enabled=False):
     options = Options()
+
+    # Core headless + CI options
     options.add_argument("--headless=new")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
+
+    # Stealth options
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
     options.add_argument("--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
     
+    # FREE SWISS PROXY (HTTP - reliable)
+    # PROXY ONLY for GitHub Actions (US IP)
+    if proxy_enabled:
+        proxy = "81.62.179.218:5472"  # Updated working proxy
+        options.add_argument(f"--proxy-server=http://{proxy}")
+
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
     # Stealth scripts

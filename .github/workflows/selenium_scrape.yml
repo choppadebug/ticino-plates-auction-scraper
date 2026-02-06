@@ -40,6 +40,8 @@ jobs:
         curl -I "https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init"
 
     - name: Run scraper
+      env:
+          USE_PROXY: true  # Enable proxy only in CI
       run: python src/ti_plates_scraper.py
 
     - name: Upload results as artifact
