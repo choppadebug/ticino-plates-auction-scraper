@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # src/scrape.py
+import re
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -27,13 +28,13 @@ def main():
     output_dir = Path("outputs")
     output_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out_file = output_dir / f"carie_auktion_{timestamp}.csv"
+    out_file = output_dir / f"carie_auktion_side_{timestamp}.csv"
 
     try:
         # TEST PROXY FIRST
         driver.set_page_load_timeout(20)
-        print("Testing Ticino site directly...")
-        driver.get("https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init")
+        print("Testing alternative Ticino site...")
+        driver.get("https://www.auktion-ch.ch/auktion/ti/default.aspx")
         time.sleep(3)  # Human-like load time
 
         print("=== DEBUG ===")
@@ -61,32 +62,16 @@ def main():
         driver.execute_script("window.scrollTo(0, 200);")
         time.sleep(1)
     
-        while True:
+        while row_index <= 5:
             try:
-                td_amount = driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[2]')
-                
-                print(f"DEBUG row {row_index}:")
-                print(f"  .text: '{td_amount.text}'")
-                print(f"  innerText: '{td_amount.get_attribute('innerText')}'")
-                print(f"  textContent: '{td_amount.get_attribute('textContent')}'")
-                print(f"  innerHTML: '{td_amount.get_attribute('innerHTML')}'")
-                print(f"  Visible: {td_amount.is_displayed()}")
-                
-                # Use the first non-empty value
-                text = td_amount.text or td_amount.get_attribute('innerText') or td_amount.get_attribute('textContent')
-                starting_prices.append(text.strip())
-                
-            except Exception as e:
-                print(f"Failed: {e}")
-            try:
-                plate_numbers.append(driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[1]/a/div/div[4]').get_attribute('innerText'))
-                starting_prices.append(driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[2]').get_attribute('innerText'))
-                min_increments.append(driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[3]').get_attribute('innerText'))
-                current_offers.append(driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[4]').get_attribute('innerText'))
-                time_to_go_list.append(driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[5]').get_attribute('innerText'))
-                offers_numbers.append(driver.find_element(By.XPATH, f'//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[{row_index}]/td[6]').get_attribute('innerText'))
+                print(f"Trying to scrape row {row_index}...")
+                plate_numbers.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[2]/a/div').get_attribute('innerText'))
+                starting_prices.append("N/A")
+                current_offers.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[4]').get_attribute('innerText'))
+                time_to_go_list.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[3]').get_attribute('innerText'))
+                offers_numbers.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[5]/span[1]').get_attribute('innerText'))
 
-                row_index += 7
+                row_index += 1
             except:
                 break
 
@@ -96,13 +81,14 @@ def main():
         # Fixed price plates
         #(driver.find_element(By.ID, 'tab3')).click()
         # Skip clicking entirely - call the JS function directly
-        driver.execute_script("selectTab('3');")
+        tab_link = driver.find_element(By.CSS_SELECTOR, 'a[href="#CARPLATESLIST"][data-toggle="tab"]').click()
         time.sleep(2)  # Give JS time to run
 
         while True:
             try:
-                plate_numbers.append(driver.find_element(By.XPATH, f'//*[@id="tabContent3"]/div/div[1]/div/div[{row_index_fixed}]/div[1]/div[4]').get_attribute('innerText'))
-                starting_prices.append(driver.find_element(By.XPATH, f'//*[@id="tabContent3"]/div/div[1]/div/div[{row_index_fixed}]/div[3]').get_attribute('innerText'))
+                print(f"Trying to scrape fixed price row {row_index_fixed}...")
+                plate_numbers.append(driver.find_element(By.XPATH, f'//*[@id="CARPLATESLIST"]/table/tbody/tr[{row_index_fixed}]/th[2]/a/div').get_attribute('innerText'))
+                starting_prices.append(driver.find_element(By.XPATH, f'//*[@id="CARPLATESLIST"]/table/tbody/tr[{row_index_fixed}]/th[4]').get_attribute('innerText'))
                 min_increments.append("N/A")
                 current_offers.append("N/A")
                 time_to_go_list.append("N/A")
@@ -110,6 +96,7 @@ def main():
 
                 row_index_fixed += 1
             except:
+                print(f"Scraped {len(plate_numbers)} plates.")
                 break
 
     finally:
@@ -119,17 +106,30 @@ def main():
     with out_file.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(
-            ["plate_number", "starting_price", "min_increment", "current_offer", "time_to_go", "offers_number"]
+            ["plate_number", "starting_price", "current_offer", "time_to_go", "offers_number"]
         )
         for row in zip(
             plate_numbers,
             starting_prices,
-            min_increments,
             current_offers,
             time_to_go_list,
             offers_numbers,
         ):
-            writer.writerow(row)
+            plate, start, cur, tgo, offers = row
+            plate_clean = clean_plate(plate)
+            cleaned_row = (plate_clean, start, cur, tgo, offers)
+            writer.writerow(cleaned_row)
+            print(f"Wrote row: {cleaned_row}")
+            
+def clean_plate(value: str) -> str:
+    if value is None:
+        return ""
+    # Remove the dot-like separator and surrounding spaces
+    # "TI • 566" -> "TI 566"
+    value = value.replace("•", " ")
+    # Normalize multiple spaces
+    value = re.sub(r"\s+", " ", value)
+    return value.strip()
 
 def setup_stealth_chrome(proxy_enabled=False):
     options = Options()

@@ -37,12 +37,12 @@ jobs:
 
     - name: Debug network
       run: |
-        curl -I "https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init"
+        curl -I "https://www.auktion-ch.ch/auktion/ti/default.aspx" || echo "Failed to reach alternative site"
 
     - name: Run scraper
       env:
           USE_PROXY: true  # Enable proxy only in CI
-      run: python src/ti_plates_scraper.py
+      run: python src/ti_plates_scraper_side.py
 
     - name: Upload results as artifact
       if: always()

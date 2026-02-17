@@ -1,1399 +1,479 @@
-<html style="margin-top: 61px;"><!-- common head --><head>
-    <meta name="version" content="431.30.65">
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    
-    <title>Asta targhe</title>
-    <link href="/ecari-auktion/resources/images/Favicon-TI.ico" rel="Shortcut Icon">
-    <script type="text/javascript" src="/ecari-auktion/wro/g1.js"></script>
-    <!--suppress CheckTagEmptyBody, HtmlExtraClosingTag -->
-    <link type="text/css" rel="stylesheet" href="/ecari-auktion/wro/g2.css">
-    <script>
-        var contextPath = "\/ecari-auktion\/";
-        contextPath = contextPath.substring(0, contextPath.length - 1);
-        /*<![CDATA[*/
-        var cariWebException = null;
-        /*]]>*/
-    </script>
+<html lang="en"><head id="Head1"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="Kontrollschild, StVA, Online-Auktion, Auktion, Autonummer, Kennzeichen, Autokennzeichen, Kontrollschilder zh, autonummern, autonummern zh"><meta name="description" content="Informationen über Schweizer Kontrollschild-Auktionen und Informationen Rund um das Thema Schweizer Kontrollschilder."><meta name="author" content="IGSK"><link rel="shortcut icon" href="/images/favicon.png"><title>
+	Kanton Tessin Kontrollschild Auktion - auktion-ch.ch
+</title><link href="/dist/css/bootstrap.min.css" rel="stylesheet"><link href="/dist/css/carousel.css" rel="stylesheet"><link href="/dist/css/color.css" rel="stylesheet"><link href="/dist/css/font-awesome.min.css" rel="stylesheet"><style id="holderjs-style" type="text/css"></style></head>
+<!-- NAVBAR
+================================================== -->
+  <body style="">
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">auktion-ch</a>
+              <a class="navbar-brand" href="https://x.com/auktionch" title="Folgen Sie auktion-ch.ch auf X"><img src="/Images/logo.svg" width="14" high="14" style="position: relative;top: 3px;"></a>
+              <a class="navbar-brand" href="https://www.facebook.com/pages/Auktion-ch/652732108120317" title="Folgen Sie auktion-ch.ch auf Facebook"><i class="fa fa-facebook-square"></i></a>
 
-
-    <script type="text/javascript">
-        var step_id = 'step1';
-        $(document).ready(function () {
-            $(".formNext").unbind("click");
-            $(".formNext").click(function (e) {
-                e.preventDefault();
-                try {
-                    var jQuerySelector = $("#" + formID);
-                    jQuerySelector.submit();
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-            $(".formBack").unbind("click");
-            $(".formBack").click(function (e) {
-                e.preventDefault();
-                try {
-                    var jQuerySelector = $("#" + formID);
-                    jQuerySelector.attr("action", urlBack);
-                    jQuerySelector.submit();
-                } catch (e) {
-                    console.log(e);
-                }
-            });
-            $(".arret").unbind("click");
-            $(".arret").click(function (e) {
-                e.preventDefault();
-                var title = getMessage("quit.process.title");
-                var message = getMessage("quit.process.text");
-                confirmDialog(title, message, function () {
-                    window.location.href = urlEnd;
-                });
-            });
-            $(".pdf").unbind("click");
-            $(".pdf").click(function (e) {
-                e.preventDefault();
-                var thisPdf = this.id;
-                displayPdf(thisPdf);
-            });
-        });
-
-        function displayPdf(thisPdf) {
-
-            var windowHeight=Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-            var windowWidth=Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-            var usableHeight = windowHeight - 80;
-            var usableWidth = windowWidth - 60;
-            var content = "<iframe id='pdfObject' src='" + contextPath + thisPdf + "' style='width:" + usableWidth + "px;height:" + usableHeight + "px;' />";
-            $.modal(content);
-            return false;
-        }
-
-        function showMenu() {
-            if (document.getElementById('searchTemplate')) {
-                document.getElementById('searchTemplate').style.display = 'none';
-                document.getElementById('loupe').style.display = 'none';
-                document.getElementById('menuOverlay').style.display = 'block';
-                document.getElementById('menuContent').style.display = 'block';
-            }
-        }
-        function hideMenu() {
-            if (document.getElementById('menuContent')) {
-                document.getElementById('menuContent').style.display = 'none';
-                document.getElementById('menuOverlay').style.display = 'none';
-            }
-        }
-        function showMenuIcon() {
-            if (document.getElementById('searchTemplate')) {
-                document.getElementById('menuIcon').style.display = 'block';
-            }
-        }
-        function  hideMenuIcon() {
-            document.getElementById('menu').style.display='none';
-        }
-
-        function showLoupe() {
-            if (document.getElementById('loupe')) {
-                document.getElementById('loupe').style.display = 'block';
-            }
-        }
-        function hideLoupe() {
-            if (document.getElementById('loupe')) {
-                document.getElementById('loupe').style.display = 'none';
-            }
-        }
-        function showSearchTemplate(tab) {
-            if (tab == 0) {
-                tab = document.getElementById("hiddenTabNumber").value;
-            }
-            if (document.getElementById('searchTemplate')) {
-                document.getElementById('menuOverlay').style.display = 'block';
-                document.getElementById('searchTemplate').style.display = 'block';
-                document.getElementById('loupe').style.display = 'none';
-                if ((tab == 3) || (tab == 4)) {
-                    document.getElementById('priceRange1').style.display = 'table-row';
-                    document.getElementById('priceRange2').style.display = 'table-row';
-                    document.getElementById('priceRange3').style.display = 'table-row';
-                } else {
-                    document.getElementById('priceRange1').style.display = 'none';
-                    document.getElementById('priceRange2').style.display = 'none';
-                    document.getElementById('priceRange3').style.display = 'none';
-                }
-                if (tab == 2) {
-                    document.getElementById('searchTemplateHeader').innerText = getMessage("AuctionPlateCari.followsList");
-                }
-                if (tab == 3) {
-                    document.getElementById('searchTemplateHeader').innerText = getMessage("AuctionPlateCari.reserveList");
-                }
-                if (tab == 4) {
-                    document.getElementById('searchTemplateHeader').innerText = getMessage("AuctionPlateCari.wishList");
-                }
-            }
-        }
-        function hideSearchTemplate(){
-            if (document.getElementById('searchTemplate')) {
-                document.getElementById('menuOverlay').style.display = 'none';
-                document.getElementById('searchTemplate').style.display = 'none';
-                document.getElementById('loupe').style.display = 'block';
-            }
-        }
-        function updateHeaders(currFunction) {
-            if (document.getElementById('searchTemplate')) {
-                    document.getElementById('searchTemplateHeader').innerText = currFunction;
-                }
-            if (document.getElementById('currentFunction')) {
-                document.getElementById('currentFunction').innerText = currFunction;
-            }
-        }
-
-    </script>
-</head>
-
-<body class="ecari-body"><div class="buorg" id="buorg" style="cursor: pointer;"><div class="buorg-pad" role="status" aria-live="polite"><span class="buorg-icon"> </span><b class="buorg-mainmsg">Your web browser (Chrome 120) has a serious security vulnerability!</b> <span class="buorg-moremsg">Update your browser for more security, speed and the best experience on this site.</span> <span class="buorg-buttons"><a id="buorgul" href="https://browser-update.org/update-browser.html#3.3.65:www.carieauktion.ti.ch" target="_blank" rel="noopener">Update browser</a> <a id="buorgig" role="button" tabindex="0">Ignore</a></span></div><style>.buorg-icon {width: 22px; height: 16px; vertical-align: middle; position: relative; top: -0.05em; display: inline-block; background: no-repeat 0px center url(https://browser-update.org/static/img/small/c.png);}</style><style>.buorg {position:absolute;position:fixed;z-index:111111; width:100%; top:0px; left:0px; border-bottom:1px solid #A29330; text-align:center;  color:#000; background-color: #fff8ea; font: 18px Calibri,Helvetica,sans-serif; box-shadow: 0 0 5px rgba(0,0,0,0.2);animation: buorgfly 1s ease-out 0s;}.buorg-pad { padding: 9px;  line-height: 1.7em; }.buorg-buttons { display: block; text-align: center; }#buorgig,#buorgul,#buorgpermanent { color: #fff; text-decoration: none; cursor:pointer; box-shadow: 0 0 2px rgba(0,0,0,0.4); padding: 1px 10px; border-radius: 4px; font-weight: normal; background: #5ab400;    white-space: nowrap;    margin: 0 2px; display: inline-block;}#buorgig { background-color: #edbc68;}@media only screen and (max-width: 700px){.buorg div { padding:5px 12px 5px 9px; line-height: 1.3em;}}@keyframes buorgfly {from {opacity:0;transform:translateY(-50px)} to {opacity:1;transform:translateY(0px)}}.buorg-fadeout {transition: visibility 0s 8.5s, opacity 8s ease-out .5s;}</style></div>
-
-<script>
-    $(document).ready(function () {
-        /*<![CDATA[*/
-        var tabs = {"action":null,"noPlaque":{"action":null,"name":null,"value":null,"label":null,"autocomplete":null,"hidden":false,"disabled":false,"placeHolder":null,"validationMessage":null},"rangeMin":{"action":null,"name":null,"value":null,"label":null,"autocomplete":null,"hidden":false,"disabled":false,"placeHolder":null,"validationMessage":null},"rangeMax":{"action":null,"name":null,"value":null,"label":null,"autocomplete":null,"hidden":false,"disabled":false,"placeHolder":null,"validationMessage":null},"priceMin":{"action":null,"name":null,"value":null,"label":null,"autocomplete":null,"hidden":false,"disabled":false,"placeHolder":null,"validationMessage":null},"priceMax":{"action":null,"name":null,"value":null,"label":null,"autocomplete":null,"hidden":false,"disabled":false,"placeHolder":null,"validationMessage":null},"categorieID":"1","tabNumber":"1","userRights":["CARI_INSPECT","CH_VEHI","RP_VEHI","RM_VEHI","AJ_VEHI","REPRISE_PLAQUES_MANUEL","REPRISE_PLAQUES","DEPOT_PLAQUES_MANUEL","NP_VEHI","SE_PERMISCIRC","DEPOT_PLAQUES","NP_MOFA","EX_MOFA","CH_MOFA","AJ_MOFA","RECHERCHE_DETENTEUR","CHANGEMENT_ADRESSE","INSPECTION_CUFA","AVEDRIS","RECHERCHE_FOLLOWS_PRIVATE","RECHERCHE_FOLLOWS_PUBLIC","RECHERCHE_USER_RIGHTS","RECHERCHE_AUCTION_PUBLIC","RECHERCHE_RESERVATION_PUBLIC","INFO_RECHERCHE","RES_EAUC","EN_EAUC","INSC_EAUC","SOUH_EAUC","RECHERCHE_SOUHAITE_PUBLIC","GE_EAUC","PWD_US_ECARI","US_ECARI","UPDATE_US_ECARI","UC_MEDKO"],"recherche":0};
-        var tabNB = '0';
-        if((tabs != null) && (tabs != "no")){
-            tabNB = "1";
-        }
-        /*]]>*/
-        var titleText = document.getElementById("currentFunction");
-
-        // test if menu icon to be displayed:
-        showMenuIcon();
-
-        if(tabNB == '0') {
-            hideLoupe();
-            if (titleText) {
-                titleText.innerText = "";
-            }
-        }
-
-        if(tabNB == '1') {
-            hideLoupe();
-            if (titleText) {
-                titleText.innerText = "Aste in corso";
-            }
-        }
-
-        if(tabNB == '2'){
-            showLoupe();
-            if (titleText) {
-                titleText.innerText = "Iscrizione per le future aste";
-            }
-        }
-
-        if(tabNB == '3'){
-            showLoupe();
-            if (titleText) {
-                titleText.innerText = "Targhe prezzo fisso";
-            }
-        }
-        if(tabNB == '4'){
-            showLoupe();
-            if (titleText) {
-                titleText.innerText = "Targhe desiderate";
-            }
-        }
-    });
-</script>
-
-
-
-<div id="menuOverlay" class="overlay" onclick="Javascript:hideMenu();hideSearchTemplate()"></div>
-<div class="ecari-leftmargin">
-    <div>
-    </div>
-</div>
-
-<!-- generic header -->
-<div class="ecari-header">
-    <div class="headerBox">
-    <div id="header">
-        <div id="menu" class="menu">
-            <a href="#" id="menuIcon" style="display: block;" onclick="Javascript:showMenu();">
-                <img class="menuIcon" src="/ecari-auktion/resources/images/auctionplate/menu.png">
-            </a>
-        </div>
-        <div id="loupe" class="notL" style="display:none;">
-            <div class="loupe notXS-L">
-                
-                    <a href="#" onclick="Javascript:showSearchTemplate(0);hideLoupe();">
-                        <img src="/ecari-auktion/resources/images/auctionplate/search.png">
-                    </a>
-                
             </div>
-        </div>
-        <div id="cantonText">
-            <h1>Asta targhe</h1>
-            <h3 id="currentFunction">Aste in corso</h3>
-            <div class="header1">Ticino</div>
-            <a href="http://www.ti.ch">
-                <div class="headerLogo"></div>
-            </a>
-            <div class="headerImage"></div>
-        </div>
-        <!-- authenticated user -->
-        <div class="lang">
-            
-        </div>
-        <div class="L">
-            
-        </div>
-        
-            <span class="header5">
-                <a class="loginLink" href="/ecari-auktion/wf/app/createUser">Creare utente</a>
-                &nbsp;&nbsp;
-                <a class="loginLink" href="/ecari-auktion/bootstrap/auth">Login</a>
-                <img src="/ecari-auktion/resources/images/auctionplate/info.png" onclick="openCGU();" style="margin-left: 10px;cursor: pointer;vertical-align: bottom">
-                
-            </span>
-        
-    </div>
-
-    <!-- *************************** Start of menu *************************** -->
-
-    <div id="menuContent" class="menuContent" style="display:none;">
-        <div class="menuItem" style="text-align:right;padding-right:10px;"><a href="#" onclick="javascript:hideMenu();">X</a></div>
-
-        <div class="menuItem"><a href="/ecari-auktion/bootstrap/auth">Login</a>
-        </div>
-
-        
-
-        <div class="menuItem"><a href="/ecari-auktion/wf/app/createUser">Creare utente</a>
-        </div>
-
-        
-        
-            
-                <div class="menuItem"><a href="#" onclick="selectTab('1');updateHeaders(this.innerText);hideMenu();hideLoupe();">Aste in corso</a></div>
-            
-            
-                <div class="menuItem"><a href="#" onclick="selectTab('2');updateHeaders(this.innerText);hideMenu();">Iscrizione per le future aste</a></div>
-            
-            
-                <div class="menuItem"><a href="#" onclick="selectTab('3');updateHeaders(this.innerText);hideMenu();">Targhe prezzo fisso</a></div>
-            
-            
-                <div class="menuItem"><a href="#" onclick="selectTab('4');updateHeaders(this.innerText);hideMenu();">Targhe desiderate</a></div>
-            
-        
-    </div>
-
-    <!-- *************************** End of menu *************************** -->
-
-
-    <div id="confirm">
-        <div class="header"><span></span></div>
-        <div class="message"></div>
-        <div class="buttons">
-             <input type="button" class="no popup-button simplemodal-close" value="No">
-            <input type="button" class="yes popup-button" value="Yes">
-        </div>
-    </div>
-</div>
-</div>
-
-<div style="width:100%;">
-    <div class="ecari-welcome">
-        <div>
-    <div style="max-width: 1172px;margin:0 10px 0 10px;">
-    <!-- *** auctionplate\welcome.html [content]  -->
-    
-    <div id="upperBox">
-    <div style="width:100%;margin: 0px;margin-top:5px;">
-        <div class="header L-block">
-            <ul id="tabs">
-                
-                    
-                        <li id="tab1" class="selected"><a href="#" onclick="selectTab('1');updateHeaders(this.innerText);hideLoupe();">Aste in corso</a></li>
-                    
-                    
-                        <li id="tab2" class="nonSelected"><a href="#" onclick="selectTab('2');updateHeaders(this.innerText);showLoupe();">Iscrizione per le future aste</a></li>
-                    
-                    
-                        <li id="tab3" class="nonSelected"><a href="#" onclick="selectTab('3');updateHeaders(this.innerText);showLoupe();">Targhe prezzo fisso</a></li>
-                    
-                    
-                        <li id="tab4" class="nonSelected"><a href="#" onclick="selectTab('4');updateHeaders(this.innerText);showLoupe();">Targhe desiderate</a></li>
-                    
-                
-            </ul>
-        </div>
-
-        <div class="neverDisplay">
-            <div style="font-size:13pt;padding-top:40px;color:red;">
-                Die minimale Bildschirmbreite für diese Funktionalität ist 320 Pixel
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="dropdown">
+                  <a href="/default.aspx" class="dropdown-toggle" data-toggle="dropdown">Auktionen<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/ks/teuerste.aspx">TOP 10 - die Teuersten der Schweiz</a></li>
+                    <li><a href="/ks/top5world.aspx">TOP 5 - die Teuersten der Welt</a></li>
+                    <li><a href="/ks/topjahr.aspx">Top Auktionen des Jahres</a></li>
+                    <li><a href="/ks/auktionderwoche.aspx">Auktionen der Woche</a></li>
+                    <li><a href="/ks/Zwischenf.aspx">Die grössten Online-Auktions Zwischenfälle</a></li>
+                    <li><a href="/ks/misbid.aspx">Auktionen mit Fehleingaben</a></li>
+                    <li><a href="/ks/tiefste.aspx">Tiefste und Teuerste pro Kanton</a></li>
+                    <li><a href="/ks/history.aspx">Rückblick auf die vergangenen Jahre</a></li>
+                    <li><a href="/ks/begehrt.aspx">Begehrte Autonummern für zukünftige Auktionen</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kontrollschilder<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/ks/KSFAQ.aspx">Häufig gestellte Fragen (FAQ)</a></li>
+                    <li><a href="/ks/wert.aspx">Der Wert eines Kontrollschilds</a></li>
+                    <li><a href="/ks/Partner.aspx">Ein Kontrollschild verkaufen</a></li>
+                    <li><a href="https://www.igsk.ch//Gutacht/Wertschatz.aspx"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Kontrollschild Wertschätzung</a></li>
+                    <li><a href="/ks/liberal.aspx">Liberalisierung - Abtretung Kontrollschilder</a></li>
+                    <li><a href="/schnapszahl/default.aspx">Schnapszahlen</a></li>
+                    <li><a href="/ks/Wunschnummern.aspx">Wunschkontrollschilder</a></li>
+                    <li><a href="https://www.kontrollschild-schweiz.ch/zukunft.aspx" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Zukunft des Schweizer Kontrollschilds</a></li>
+                    <li><a href="https://www.kontrollschild-schweiz.ch/glossar.aspx" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Glossar</a></li>
+                    <li><a href="https://www.igsk.ch/ArchivCH/Medien.aspx" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Media Archiv</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Weitere Webseiten der IGSK</li>
+                    <li><a href="https://www.igsk.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Webseite der IGSK</a></li>
+                    <li><a href="https://www.mofanummer.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Mofanummer.ch</a></li>
+                    <li><a href="https://www.kontrollschild-schweiz.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> kontrollschild-schweiz.ch</a></li>
+                    <li><a href="https://www.schilder-wald.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> schilder-wald.ch</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Webseiten unserer Partner</li>
+                    <li><a href="https://kontrollschild.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> kontrollschild.ch (Verkaufsplattform)</a></li>
+                    <li><a href="https://numbertrade.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> numbertrade.ch (Verkaufsplattform)</a></li>
+                    <li><a href="https://swisscarplates.ch" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> swisscarplates.ch (Verkaufsplattform)</a></li>
+                    <li><a href="https://www.instagram.com/swisscarplates/" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> swisscarplates (Plate-Spot Community)</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">StVA eAuktion Seiten<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li class="dropdown-header">Online-Autkionen</li>
+                    <li><a href="https://www.auktion-ag.ch" target="_blank">AG</a></li>
+                    <li><a href="https://eauktion.ar.ch" target="_blank">AR</a></li>
+                    <li><a href="https://www.auktion-be.ch" target="_blank">BE</a></li>
+                    <li><a href="https://eauktion.bl.ch/ecari-auction" target="_blank">BL</a></li>
+                    <li><a href="https://appls.ocn.ch/ecari-auction?locale=de_ch" target="_blank">FR</a></li>
+                    <li><a href="https://www.ricardo.ch/online-shop/encheres-plaques-ge/?SortingType=5&amp;SellerNickName=ENCHERES-PLAQUES-GE&amp;SeeComments=True" target="_blank">GE</a></li>
+                    <li><a href="https://eauktion.gr.ch" target="_blank">GR</a></li>
+                    <li><a href="https://www.ricardo.ch/fr/shop/OVJ" target="_blank">JU</a></li>
+                    <li><a href="https://www.ricardo.ch/de/shop/ENCHERES-PLAQUES-NE/offers/" target="_blank">NE</a></li>
+                    <li><a href="https://ecarinwprod.ilz.info/ecari-auction/" target="_blank">NW</a></li>
+                    <li><a href="https://ecariowprod.ilz.info/ecari-auction/" target="_blank">OW</a></li>
+                    <li><a href="https://egov.stva.sg.ch/ecari-auction" target="_blank">SG</a></li>
+                    <li><a href="https://www.auktion-stva.sh.ch/" target="_blank">SH</a></li>
+                    <li><a href="https://eauktion.so.ch/ecari-auction" target="_blank">SO</a></li>
+                    <li><a href="https://cariegov.sz.ch/ecari-auction" target="_blank">SZ</a></li>
+                    <li><a href="https://www.auktion.tg.ch" target="_blank">TG</a></li>
+                    <li><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank">TI</a></li>
+                    <li><a href="https://www.encheres-vd.ch" target="_blank">VD</a></li>
+                    <li><a href="https://ecari.vs.ch/ecari-auction/?locale=de_CH" target="_blank">VS</a></li>
+                    <li><a href="https://zg.ch/de/mobilitaet-reisen/strassenverkehr/fahrzeuge-und-kontrollschilder/kontrollschilder" target="_blank">ZG</a></li>
+                    <li><a href="https://www.auktion.stva.zh.ch" target="_blank">ZH</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Fest-Preise</li>
+                    <li><a href="https://www.ai.ch/themen/mobilitaet-und-verkehr/strassenverkehr/kontrollschilder" target="_blank">AI</a></li>
+                    <li><a href="https://www.polizei.bs.ch/verkehr/motorfahrzeugkontrolle/fahrzeuge/schilder/wunschkontrollschilder.html" target="_blank">BS</a></li>
+                    <li><a href="https://eschild.gl.ch" target="_blank">GL</a></li>
+                    <li><a href="https://strassenverkehrsamt.lu.ch/Strassenverkehr/fahrzeug/kontrollschilderboerse_wunschkontrollschild" target="_blank">LU</a></li>
+                    <li><a href="https://www.ur.ch/dienstleistungen/4046" target="_blank">UR</a></li>
+                  </ul>
+                </li>
+                  
+              </ul>
+                  
             </div>
+          </div>
         </div>
-        <div class="notXS selectionDiv">
-    <!-- *** auctionPage.html [searchBar]  -->
-    <script>
-        /*<![CDATA[*/
-        var contextImg = "\/ecari-auktion\/";
-        /*]]>*/
-    </script>
-    <div style="margin:1px;text-align:left;width:100%;">
         
-            <form method="get" id="auctionForm" onsubmit="selectRecherche();">
-                <input type="hidden" value="1" id="hiddenTabNumber" name="tabNumber">
-                <input type="hidden" value="1" id="categorieID" name="categorieID">
-                <input type="hidden" id="recherche" name="recherche" value="0">
-                <table border="0" cellpadding="4">
-                   <tbody><tr>
-                       <td>
-                            <input type="image" id="catChoice1a" class="carChoice" style="/ecari-auktion/opacity:1" src="/ecari-auktion/resources/images/auctionplate/carSelected.gif" width="40" alt="car" onclick="selectCat('1');">
-                            
+        <div class="w-100" style="background-image: url('/Images/TIB.svg'); background-position: center; background-size: cover;">
+              <h1><img src="/Images/TIW.svg" width="52" height="70"> Kanton Tessin</h1>
+        </div>
+        <div class="col-md-12">
+           <div class="btn-group btn-group-sm">
+                 <span id="MainContent_Kantonruler"><div class="btn-group btn-group-sm"><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ag/default.aspx'">AG (18)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ai/default.aspx'">AI (8)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ar/default.aspx'">AR (37)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/be/default.aspx'">BE (13)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/bl/default.aspx'">BL (6)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/bs/default.aspx'">BS (155+)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/fr/default.aspx'">FR (21)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ge/default.aspx'">GE (0)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/gl/default.aspx'">GL (0)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/gr/default.aspx'">GR (157)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ju/default.aspx'">JU (0)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/lu/default.aspx'">LU (130)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ne/default.aspx'">NE (0)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/nw/default.aspx'">NW (75)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ow/default.aspx'">OW (50)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/sg/default.aspx'">SG (16)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/sh/default.aspx'">SH (37)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/so/default.aspx'">SO (76)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/sz/default.aspx'">SZ (12)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/tg/default.aspx'">TG (40)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ti/default.aspx'">TI (19)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/ur/default.aspx'">UR (46+)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/vd/default.aspx'">VD (0)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/vs/default.aspx'">VS (8)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/zg/default.aspx'">ZG (6)</button><button type="button" class="btn btn-default" onclick="window.location.href='/auktion/zh/default.aspx'">ZH (25)</button></div></span> 
+           </div>
+        </div>
+        <div class="col-md-12">
+            <div class="row"><hr></div>
+        </div>
+        <div class="col-lg-6">
+            <div id="ULLIST" class="tab-content">
+                <ul id="Ul2" class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#CAR" role="tab" data-toggle="tab"><i class="fa fa-car"></i> <i class="fa fa-gavel"></i> (<span id="MainContent_CarCount">5</span>)</a></li>
+                    <li><a href="#BIKE" role="tab" data-toggle="tab"><i class="fa fa-motorcycle"></i> <i class="fa fa-gavel"></i> (<span id="MainContent_BikeCount">0</span>)</a></li>
+                    <li><a href="#CARPLATESLIST" role="tab" data-toggle="tab"><i class="fa fa-car"></i> <i class="fa fa-file-text-o"></i> (<span id="MainContent_CarListCount">6</span>)</a></li>
+                    <li><a href="#BIKEPLATESLIST" role="tab" data-toggle="tab"><i class="fa fa-motorcycle"></i> <i class="fa fa-file-text-o"></i> (<span id="MainContent_BikeListCount">8</span>)</a></li>
+                    <li><a href="#SOLDPLATES" role="tab" data-toggle="tab"><i class="fa fa-history"></i> Verkauft (<span id="MainContent_SoldCount">27</span>)</a></li>
+                </ul>
+                <div id="TabContent" class="tab-content">
+                   <div class="tab-pane fade in active" id="CAR">
+                        <span id="MainContent_CARPLATES"></span><table class="table table-striped">
+                            <tbody>
+                                <tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-minus-sign red" title="Keine Liberalisierung"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti3st">TI • 566</div></a></th><th class="col-md-2" style="vertical-align: middle; "><span class="glyphicon glyphicon-calendar" title="Auktionsende"></span> 25.02.2026</th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 10'100</th><th class="col-md-1" style="vertical-align: middle; "><span class="badge">9</span><span class="glyphicon glyphicon-fire red"></span></th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti4st">TI • 1579</div></a></th><th class="col-md-2" style="vertical-align: middle; "><span class="glyphicon glyphicon-calendar" title="Auktionsende"></span> 18.02.2026</th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: floralwhite;">SFr. 6'000</th><th class="col-md-1" style="vertical-align: middle; "><span class="badge">10</span><span class="glyphicon glyphicon-fire red"></span></th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><span class="glyphicon glyphicon-user indigo" title="Verkauf durch Halter"></span> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span>&nbsp;<img src="/images/NBTRD.jpg" style="vertical-align: text-top;" title="Auktion auf numbertrade.ch" alt="Auktion auf numbertrade.ch"></th><th class="col-md-2"><a href="https://numbertrade.ch/" target="_blank"><div class="langformatti5st">TI • 10748</div></a></th><th class="col-md-2" style="vertical-align: middle; "><span class="glyphicon glyphicon-calendar" title="Auktionsende"></span> 24.02.2026</th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 1'900</th><th class="col-md-1" style="vertical-align: middle; "><span class="badge">0</span></th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 40504</div></a></th><th class="col-md-2" style="vertical-align: middle; "><span class="glyphicon glyphicon-calendar" title="Auktionsende"></span> 18.02.2026</th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 1'000</th><th class="col-md-1" style="vertical-align: middle; "><span class="badge">7</span><span class="glyphicon glyphicon-fire red"></span></th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 340340</div></a></th><th class="col-md-2" style="vertical-align: middle; "><span class="glyphicon glyphicon-calendar" title="Auktionsende"></span> 25.02.2026</th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 800</th><th class="col-md-1" style="vertical-align: middle; "><span class="badge">4</span></th></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="BIKE">
+                        <span id="MainContent_BIKEPLATES"></span><table class="table table-striped">
+                           <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="CARPLATESLIST">
+                        <span id="MainContent_CARLIST"></span><table class="table table-striped">
+                            <tbody>
+                                <tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="langformatti5st">TI • 39562</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 450</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="langformatti5st">TI • 43872</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 400</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="langformatti5st">TI • 57351</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 400</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="langformatti5st">TI • 61504</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 350</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="langformatti5st">TI • 93847</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 300</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="langformatti6st">TI • 111439</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 200</th></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="BIKEPLATESLIST">
+                        <span id="MainContent_BIKELIST"></span><table class="table table-striped">
+                            <tbody>
+                                <tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>5268</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 250</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>6337</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 300</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>6356</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 300</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>6956</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 300</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>8562</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 250</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>8627</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 250</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>9456</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 350</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Verkauf durch SC Ticino"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Verkauf auf carieauktion.ti.ch"></i></th><th class="col-md-2"><a href="https://www.carieauktion.ti.ch/ecari-auktion" target="_blank"><div class="biketi">TI <br>9819</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;"></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">SFr. 300</th></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane" id="SOLDPLATES">
+                        <span id="MainContent_SOLD"></span><table class="table table-striped">
+                            <tbody>
+                                <tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 67571</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: antiquewhite;">17.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-minus-sign red" title="Keine Liberalisierung"></span> <i class="fa fa-gavel" title="über Online Auktion"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti3st">TI • 195</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">15.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-gavel" title="über Online Auktion"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 10492</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">15.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 174333</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">15.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 308111</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">13.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="biketi">TI <br>4391</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">13.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 34528</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">13.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 21903</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">11.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 25451</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">11.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 70451</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">11.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 75807</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">09.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 95426</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">09.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 46122</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">09.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="biketi">TI <br>5725</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">09.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-gavel" title="über Online Auktion"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 23335</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">08.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-gavel" title="über Online Auktion"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 131111</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">08.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 189444</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">07.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 111795</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">06.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 301555</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">05.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-gavel" title="über Online Auktion"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 10512</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">04.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-minus-sign red" title="Keine Liberalisierung"></span> <i class="fa fa-gavel" title="über Online Auktion"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti3st">TI • 304</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">04.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 98391</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">04.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 75584</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">03.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 76808</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">03.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="biketi">TI <br>3695</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">03.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti5st">TI • 61240</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">03.02.2026</th></tr><tr><th class="col-md-1" style="vertical-align: middle;"><i class="fa fa-shield fa-lg" title="Auktion durch SC"></i> <span class="glyphicon glyphicon-ok-sign green" title="Privat Verkauf möglich"></span> <i class="fa fa-file-text-o" title="ab Liste"></i>&nbsp; <i class="fa fa-university" aria-hidden="true" title="Auktion auf carieauktion.ti.ch"></i></th><th class="col-md-2" style="text-align: -webkit-center;"><a href="https://www.carieauktion.ti.ch/ecari-auktion/" target="_blank"><div class="langformatti6st">TI • 271999</div></a></th><th class="col-md-2" style="vertical-align: middle;text-align: center;background-color: none;">03.02.2026</th></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+           <div class="alert alert-info" role="alert">
+               Haben Sie Fragen zur Online-Registrierung oder Ihrem Konto beim SC Ticino, dann nehmen Sie bitte direkt den Kontakt mit dem SC Ticino auf, dem Betreiber der Online-Auktionen im Kanton Tessin. <br>
+               <a href="https://www4.ti.ch/index.php?id=109201" target="_blank">Link zur offiziellen Webseite des SC Ticino</a>
+           </div>
+            
+            <table class="table table-bordered">
+                <tbody><tr>
+                    <td><i class="fa fa-shield fa-lg" title="Auktion durch StVA"></i> StVA Auktion</td>
+                    <td><span class="glyphicon glyphicon-user" title="Privatverkauf möglich"></span> Privat Auktion</td>
+                    <td style="background-color: antiquewhite;"><span class="glyphicon glyphicon-refresh" title="Gebot vor Kurzem abgegeben"></span> kürzlich geboten</td>
+                </tr>
+                <tr>
+                    <td><span class="glyphicon glyphicon-ok-sign green" title="Privatverkauf möglich"></span> Abtretung möglich</td>
+                    <td><span class="glyphicon glyphicon-minus-sign red" title="Keine Liberalisierung"></span> nicht liberalisiert</td>
+                    <td><span class="glyphicon glyphicon-info-sign orange" title="Abtreung mit Auflagen"></span> Abtretung mit Auflagen</td>
+                </tr>
+            </tbody></table>
+
+            <p>*Auktionsdaten sind keine Echtzeitdaten. Aktuelle Auktionsdaten finden Sie auf der Auktions-Seite des Sezione della circolazione Ticino.</p>
+        </div>
+        
+        <div class="col-lg-6">
+            <ul id="MyTab2" class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#current" role="tab" data-toggle="tab"><i class="fa fa-calendar-check-o"></i> Aktuell</a></li>  
+                <li><a href="#hist" role="tab" data-toggle="tab"><i class="fa fa-history"></i> Rückblick</a></li>
+                <li><a href="#durchschnitt" role="tab" data-toggle="tab"><i class="fa fa-line-chart"></i> Preise</a></li>
+                <li><a href="#liberal" role="tab" data-toggle="tab"><i class="fa fa-gavel" aria-hidden="true"></i> Rechte</a></li>
+                <li><a href="#STVA" role="tab" data-toggle="tab"><i class="fa fa-university"></i> SC Ticino</a></li>
+          </ul>
+
+          <div id="Div1" class="tab-content">
+                <div class="tab-pane fade in active" id="current">
+                    <div class="jumbotron">
+                        <span id="MainContent_HTMLStory"><h3><b>Rentner in Panik! 
+Das Supergebot von 350'000 Franken war ein Tippfehler</b></h3> <p>Bei einer Online-Auktion ging das Autokennzeichen «TI 7851» für eine Rekordsumme weg. Doch der Deutschschweizer Bieter wollte eigentlich nur 3500 Franken zahlen.</p><p><a class="btn btn-primary btn-lg" href="https://www.blick.ch/news/schweiz/tessin/rentner-in-panik-nach-ersteigerung-von-nummernschild-das-supergebot-von-350000-franken-war-ein-tippfehler-id15387837.html" role="button" target="_blank">Zum Artikel</a></p></span>
+                    </div>
+                     <div class="caption" style="text-align:center">
+                         <p style="text-align:center">Im Tessin wurde im Jahr 2017 zum letzten Mal eine öffentliche Versteigerung durchgeführt. Darunter wurde zum ersten Mal eine einstellige Nummer die TI 9 versteigert.<br><br></p>
+                          <div class="kantontihoch"><br><img src="/images/9.gif"></div><br><br>
+                          <p style="text-align:center">Die laufenden Online-Auktionen im Tessin zeigen, dass der Kanton Tessin zu den Kaufkraft starken Kantonen zählt.</p>
+                    </div>
+                    <div class="panel panel-default ">
+                        <div class="panel-heading"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Letzte Meldungen aus den Medien</div>
+                            <span id="MainContent_News"></span><table class="table table-striped">
+                            <tbody>
+                                <tr><td>16.11.2017</td><td><span class="glyphicon glyphicon-flag" aria="" -hidden="true"></span></td><td><a href="https://www.rsi.ch/news/ticino-e-grigioni-e-insubria/La-pi%C3%B9-contesa-TI-888888-9793558.html" target="_blank">Le targhe all’asta online in Ticino sono un successo. Dall’avvio della procedura di vendita il 3 maggio, sono stati ricavati 767'000 franchi.</a></td></tr><tr><td>28.04.2017</td><td><span class="glyphicon glyphicon-flag" aria="" -hidden="true"></span></td><td><a href="http://www.gdp.ch/ticino-e-regioni/ticino/targhe-allasta-ce-anche-la-ti-9-id165652.html" target="_blank">Finora era riservata alle automobili dello Stato. La T 10 era stata venduta nel 2011 per la cifra record di 135’000 franchi. Il ricavato andrà ai programmi di prevenzione.
+
+</a></td></tr><tr><td>21.02.2013</td><td><span class="glyphicon glyphicon-flag" aria="" -hidden="true"></span></td><td><a href="http://www.20min.ch/schweiz/news/story/-Die-Leute-drehen-sich-um-und-machen-Fotos--11461619" target="_blank">Ein St. Galler hat «SG 1» für 135 000 Franken ersteigert. Francesco Magistra bezahlte genau gleich viel für «TI 10». Er erzählt, wie es sich mit einer tiefen Autonummer lebt.</a></td></tr>
+                            </tbody>
+                        </table>            
+                    </div>
+                </div>
+               <div class="tab-pane fade" id="hist">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <td>Letztes * KS</td>
+                            <td>03.05.2017</td>
+                            <td><div class="langformatti1st">TI • 9</div></td>
+                        </tr>
+                        <tr>
+                            <td>Letztes ** KS</td>
+                            <td>25.12.2019</td>
+                            <td><div class="langformatti2st">TI • 19</div></td>
+                        </tr>
+                        <tr>
+                            <td>Letzte Schnapszahl</td>
+                            <td>06.02.2022</td>
+                            <td><div class="langformatti6st">TI • 444 444</div></td>
+                        </tr>
+                        <tr>
+                            <td>Letztes *** Palindromzahl</td>
+                            <td>17.03.2022</td>
+                            <td><div class="langformatti3st">TI • 808</div></td>
+                        </tr>
+                        <tr>
+                            <td>Letztes *** Zahlenstrasse</td>
+                            <td>28.05.2023</td>
+                            <td><div class="langformatti3st">TI • 765</div></td>
+                        </tr>
+                        <tr>
+                            <td>Teuerstes KS</td>
+                            <td>30.11.2011</td>
+                            <td><div class="langformatti2st">TI • 10</div></td>
+                        </tr>
+                        <tr>
+                            <td>Tiefstes privates KS</td>
+                            <td>03.05.2017</td>
+                            <td><div class="langformatti1st">TI • 9</div></td>
+                        </tr>
+                    </tbody>
+                    </table>
+               </div>
+               <div class="tab-pane fade" id="durchschnitt">
+                 <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center">Stellen</th>
+                            <th style="text-align:right">Bereich</th>
+                            <th>Startpreis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="langformatti1st">TI  • 0</div></td>
+                            <td style="text-align:right">1-9</td>
+                            <td>CHF 10'000</td>
+                        </tr>
+                        <tr>
+                            <td><div class="langformatti2st">TI  • 00</div></td>
+                            <td style="text-align:right">10-99</td>
+                            <td>CHF 5'000</td>
+                        </tr>
+                        <tr>
+                            <td><div class="langformatti3st">TI  • 000</div></td>
+                            <td style="text-align:right">100-999</td>
+                            <td>CHF 3'000</td>
+                        </tr>
+                        <tr>
+                            <td><div class="langformatti4st">TI  • 0000</div></td>
+                            <td style="text-align:right">1000-9999</td>
+                            <td>CHF 1'000</td>
+                        </tr>
+                        <tr>
+                            <td><div class="langformatti5st">TI  • 00000</div></td>
+                            <td style="text-align:right">10000-99999</td>
+                            <td>CHF 500</td>
+                        </tr>
+                        <tr>
+                            <td><div class="langformatti6st">TI  • 000 000</div></td>
+                            <td style="text-align:right">100000-999999</td>
+                            <td>CHF 500</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div class="tab-pane fade" id="liberal">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th style="text-align:right">Bereich</th>
+                            <th>liberalisiert</th>
+                            <th>StVA Kosten</th>
+                            <th>Sonderabgaben</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align:right">1-9</td>
+                            <td><p style="color:orange;">nicht liberalisiert</p></td>
+                            <td>Fr. 50.- bis 120.-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right">10-99</td>
+                            <td><p style="color:orange;">nicht liberalisiert</p></td>
+                            <td>Fr. 50.- bis 120.-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right">100-999</td>
+                            <td><p style="color:orange;">nicht liberalisiert</p></td>
+                            <td>Fr. 50.- bis 120.-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right">1000-9999</td>
+                            <td><p style="color:green;">liberalisiert</p></td>
+                            <td>Fr. 50.- bis 120.-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right">10000-99999</td>
+                            <td><p style="color:green;">liberalisiert</p></td>
+                            <td>Fr. 50.- bis 120.-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right">100000-999999</td>
+                            <td><p style="color:green;">liberalisiert</p></td>
+                            <td>Fr. 50.- bis 120.-</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                        <td colspan="4">
+                                <div class="alert alert-info" role="alert">
+                                    <p><i class="fa fa-shield fa"></i> 
+                                        Rechte am Kontrollschild</p>
+                                    <p>9.  Cessione<br>
+                                        Le targhe acquistate possono essere cedute liberamente, ad eccezione delle targhe a 1, 2 o 3 cifre. Queste ultime possono essere cedute unicamente al coniuge, al partner registrato, ai genitori e ai figli, per le persone giuridiche agli organi delle stesse.<br>
+                                        La prima cessione di una targa, effettuata dopo l'acquisto e prima dell'immatricolazione della stessa, è gratuita.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>                
+                </div>
+                 <div class="tab-pane fade" id="STVA">
+                    <table class="table table-striped">
+                        <tbody><tr>
+                            <td>
+                                <p style="text-align:center"><a target="_blank" class="btn btn-primary" href="https://www4.ti.ch/index.php?id=109201" role="button">Direktlink zur Sezione della circolazione Ticino</a></p>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                </div>
+            </div>
+            </div>
+             <div class="row">
+                    <hr>
+             </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="caption" style="text-align:center">
+                         <div class="kantontihoch"><br><img src="/images/9.gif"></div>
+                        <h3>Die tiefsten im Kanton*</h3>
+                        <p>Viele der tiefen Nummern wurden zwischen 1994 und 2017 öffentlich versteigert.</p>
+                        <span id="MainContent_TItief"></span><table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Rang</th>
+                                    <th>Nummer</th>
+                                    <th>Datum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: none;"><td><span class="badge">1 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti1st"> TI  • 9</div></a></div></td><td style="vertical-align: middle;">03.05.2017</td></tr><tr style="background-color: none;"><td><span class="badge">2 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 10</div></a></div></td><td style="vertical-align: middle;">30.11.2011</td></tr><tr style="background-color: none;"><td><span class="badge">3 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 13</div></a></div></td><td style="vertical-align: middle;">15.11.1994</td></tr><tr style="background-color: none;"><td><span class="badge">4 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 16</div></a></div></td><td style="vertical-align: middle;">15.11.1995</td></tr><tr style="background-color: none;"><td><span class="badge">5 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 17</div></a></div></td><td style="vertical-align: middle;">15.11.1995</td></tr><tr style="background-color: none;"><td><span class="badge">6 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 19</div></a></div></td><td style="vertical-align: middle;">25.12.2019</td></tr><tr style="background-color: none;"><td><span class="badge">7 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 29</div></a></div></td><td style="vertical-align: middle;">03.03.2017</td></tr><tr style="background-color: none;"><td><span class="badge">8 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 34</div></a></div></td><td style="vertical-align: middle;">30.11.2011</td></tr><tr style="background-color: none;"><td><span class="badge">9 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 48</div></a></div></td><td style="vertical-align: middle;">04.05.2024</td></tr><tr style="background-color: none;"><td><span class="badge">10 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 68</div></a></div></td><td style="vertical-align: middle;">23.12.2018</td></tr>
+                            </tbody>
+                        </table>
+                         <p>* die Liste ist nicht abschliessend, uns liegen nicht alle Daten zwischen 1994 und 2017 vor.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="caption" style="text-align:center">
+                        <img class="img-circle" src="/Images/spezial/Nachforsch.jpg" alt="Nachforschung">
+                        <h3>Nachforschung</h3>
+                        <p>Tiefes Nummernschild ersteigert oder schon lange eines in Familienbesitz dessen Geschichte Sie kennen möchten?</p>
+                        <p><a href="https://www.igsk.ch/Nachforschung/" class="btn btn-primary" role="button" target="_blank"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Nachforschung</a></p>
+                    </div>
+
+                </div>
+                 <div class="col-sm-6 col-md-4">
+                    <div class="caption" style="text-align:center">
+                        <div class="kantontihoch"><br><img src="/images/1.gif"><img src="/images/0.gif"></div>
+                        <h3>Die TOP 10 im Tessin</h3>
+                        <p>Noch heute eine Legende die TI 10 ist das teuerste Tessiner Kontrollschild.</p>
+                        <span id="MainContent_KantonTOP"></span><table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Rang</th>
+                                    <th>Nummer</th>
+                                    <th>Datum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: none;"><td><span class="badge">1 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 10</div></a></div></td><td style="vertical-align: middle;">30.11.2011</td></tr><tr style="background-color: none;"><td><span class="badge">2 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti1st"> TI  • 9</div></a></div></td><td style="vertical-align: middle;">03.05.2017</td></tr><tr style="background-color: none;"><td><span class="badge">3 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 488</div></a></div></td><td style="vertical-align: middle;">07.07.2021</td></tr><tr style="background-color: none;"><td><span class="badge">4 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 808</div></a></div></td><td style="vertical-align: middle;">16.03.2022</td></tr><tr style="background-color: none;"><td><span class="badge">5 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 812</div></a></div></td><td style="vertical-align: middle;">23.11.2022</td></tr><tr style="background-color: none;"><td><span class="badge">6 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 102</div></a></div></td><td style="vertical-align: middle;">26.04.2023</td></tr><tr style="background-color: none;"><td><span class="badge">7 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti2st"> TI  • 48</div></a></div></td><td style="vertical-align: middle;">04.05.2024</td></tr><tr style="background-color: none;"><td><span class="badge">8 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 690</div></a></div></td><td style="vertical-align: middle;">27.03.2022</td></tr><tr style="background-color: none;"><td><span class="badge">9 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 139</div></a></div></td><td style="vertical-align: middle;">15.10.2025</td></tr><tr style="background-color: none;"><td><span class="badge">10 </span></td><td style="vertical-align: middle;"><div style="display:inline-table; vertical-align: middle;"><a href="/auktion/ti/default.aspx" style="color: inherit; text-decoration: none; "><div class="langformatti3st"> TI  • 175</div></a></div></td><td style="vertical-align: middle;">08.08.2018</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+       <div id="cookie_directive_container" class="container" style="display: none">
+            <nav class="navbar navbar-default navbar-fixed-bottom">
+
+                <div class="container">
+                <div class="navbar-inner navbar-content-center" id="cookie_accept">
+                    <p class="text-muted credit">
+                      Diese Website nutzt Cookies, um bestmögliche Funktionalität bieten zu können. Weitere Details unter <a href="/Datenschutz.aspx">Datenschutz</a>
+                      <a href="#" class="btn btn-default">OK</a> 
+                    </p>
+                    <br>
+
+                </div>
+              </div>
+
+            </nav>
+        </div>
+        <div class="col-md-12">
+           <div class="row">
+               <hr style="border: 0; clear:both;  display:block;  width: 100%; background-color:#CCCCCC;  height: 1px;">
+                <table class="col-md-12">
+                    <tbody><tr>
+                        <td style="text-align: center; width: 100%;">                    
+                            <a href="https://www.igsk.ch/Kontakt">Impressum / Kontakt </a> / <a href="/Datenschutz.aspx">Datenschutz</a>
+                            <br>
+                            © <span id="YearCopy">2026</span> Interessengemeinschaft Schweizer Kontrollschilder
                         </td>
-                        <td>
-                            <input type="image" id="catChoice2a" class="bikeChoice" style="opacity:0.5" src="/ecari-auktion/resources/images/auctionplate/bike.gif" width="40" alt="bike" onclick="selectCat('2');">
-                            
-                        </td>
-                        <td style="padding-left:28px;text-align:left;vertical-align: middle;" class="L-cell">Numero targa</td>
-                        <td style="text-align:left;">
-                            <input type="text" placeholder="Targhe" maxlength="13" class="plaque" id="noPlaque.value" name="noPlaque.value" value="">
-                        </td>
-                        <td style="text-align:left;">
-                           <input type="image" onclick="setRecherche(1);" src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon">
-                           
-                        </td>
-                       <td style="text-align:left;" class="L-cell">
-                           <img onclick="openInfo();" style="height: 20px;cursor: pointer;" src="/ecari-auktion/resources/images/auctionplate/info.png">
-                           
-                       </td>
                     </tr>
-
-                   <!--Row 2: Inscription and Reservation functionality for a range of numbers: ( > 760px display only)-->
-                   <tr class="extraSearchField2 extraSearchField3 extraSearchField4 L-cell" style="display: none;">
-                       <td class="L-cell" colspan="2">&nbsp;</td>
-                       <td class="L-cell" style="text-align:left;padding-left:28px;">
-                           <label>Targhe tra</label>
-                       </td>
-                       <td class="L-cell">
-                           <input onkeypress="return filterNumericInput(event);" placeholder="Targhe" maxlength="7" class="plaque" id="rangeMin.value" name="rangeMin.value" value="">
-                           <label>e</label>
-                           <input onkeypress="return filterNumericInput(event);" placeholder="Targhe" maxlength="7" class="plaque" id="rangeMax.value" name="rangeMax.value" value="">
-                       </td>
-                       <td class="L-cell">
-                           <input type="image" onclick="setRecherche(2);" src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon">
-                           
-                       </td>
-                   </tr>
-                    <!--Row 3: Reservation functionality for a range of prices: ( > 760px display only)-->
-                   <tr class="L-cell extraSearchField3 extraSearchField4" style="display: none;">
-                       <td class="L-cell" colspan="2">&nbsp;</td>
-                       <td class="L-cell" style="text-align:left;padding-left:28px;"> <label>Prezzo tra</label></td>
-                       <td class="L-cell">
-                           <input onkeypress="return filterNumericInput(event);" placeholder="Prezzo" maxlength="7" class="plaque" id="priceMin.value" name="priceMin.value" value="">
-                           <label>e</label>
-                           <input onkeypress="return filterNumericInput(event);" placeholder="Prezzo" maxlength="7" class="plaque" id="priceMax.value" name="priceMax.value" value="">
-                       </td>
-                       <td class="L-cell">
-                           <input type="image" src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon" onclick="setRecherche(3);">
-                           
-                       </td>
-                   </tr>
                 </tbody></table>
-            </form>
-        
-    </div>
-
- <!-- *************************** Start of popup selection div for < 760 pixel devices *************************** -->
-    <div id="searchTemplate" class="searchTemplate" style="display:none;">
-        <div class="menuItem" style="text-align:right;padding-right:10px;padding-bottom:5px;font-weight:600;font-size:15pt;"><a href="#" onclick="javascript:hideSearchTemplate();">X</a></div>
-        <form method="get" onsubmit="selectRecherche();">
-            <input type="hidden" value="1" id="categorieID" name="categorieID">
-            <input type="hidden" value="1" id="tabNumber" name="tabNumber">
-            <input type="hidden" id="recherche" name="recherche" value="0">
-            <table border="0" width="100%" cellpadding="0">
-            <tbody><tr>
-                <td colspan="2" style="text-align:left;padding:5px 0 10px 0;">
-                    <b><label id="searchTemplateHeader">Iscrizione per le future aste</label></b>
-                </td>
-            </tr>
-            <tr>
-                <td style="text-align:left;padding:0 0 10px 0;">
-                    <img type="image" id="catChoice1c" class="carChoice" style="/ecari-auktion/opacity:1" src="/ecari-auktion/resources/images/auctionplate/carSelected.gif" width="40" alt="car" onclick="selectCat('1');">
-                    
-
-                    <img type="image" id="catChoice2c" class="bikeChoice" style="opacity:0.5" src="/ecari-auktion/resources/images/auctionplate/bike.gif" width="40" alt="bike" onclick="selectCat('2');">
-                    
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr style="background-color: #e8e8e8;">
-                <td colspan="3" style="text-align:left;padding:5px 5px 0 5px;">
-                    <label>Numero targa</label>
-                </td>
-            </tr>
-            <tr style="background-color: #e8e8e8;">
-                <td style="text-align:left;padding:0 5px 5px 5px;">
-                    <input type="text" placeholder="Targhe" maxlength="13" class="plaque" style="width:80%;max-width:400px;" id="noPlaque.value" name="noPlaque.value" value="">
-                </td>
-                <td>
-                    <input type="image" class="icon" src="/ecari-auktion/resources/images/auctionplate/bigSearch.gif" onclick="Javascript:hideSearchTemplate();setRecherche(1);" style="padding-left:5px;width:28px;height:28px;opacity:0.6;">
-                    
-                </td>
-                <td>
-                    <img onclick="openInfo();" style="height: 28px;cursor: pointer;padding-left: 5px;padding-right: 5px;" src="/ecari-auktion/resources/images/auctionplate/info.png">
-                    
-                </td>
-            </tr>
-
-            <tr><td colspan="3" style="height:20px;text-align:left;padding:5px 5px 5px 5px;">
-                <label>oder</label>
-            </td></tr>
-
-            <tr style="background-color: #e8e8e8;">
-                <td colspan="3" style="text-align:left;padding:5px 5px 5px 5px;">
-                    <label>Targhe tra</label>
-                </td>
-            </tr>
-            <tr style="background-color: #e8e8e8;">
-                <td style="text-align:left;padding:0 5px 5px 5px;">
-                    <input onkeypress="return filterNumericInput(event);" placeholder="Targhe" maxlength="7" class="plaque" style="width:35%" id="rangeMin.value" name="rangeMin.value" value="">
-                    &nbsp;<label>e</label>&nbsp;
-                    <input onkeypress="return filterNumericInput(event);" placeholder="Targhe" maxlength="7" class="plaque" style="width:35%" id="rangeMax.value" name="rangeMax.value" value="">
-                </td>
-                <td colspan="2">
-                    <input type="image" src="/ecari-auktion/resources/images/auctionplate/bigSearch.gif" onclick="Javascript:hideSearchTemplate();setRecherche(2);" class="icon" style="padding-left:5px;width:28px;height:28px;opacity:0.6;">
-                    
-                </td>
-            </tr>
-            <!-- following lines for tab3 and tab4 only -->
-            <tr id="priceRange1"><td colspan="3" style="height:20px;">&nbsp;</td></tr>
-            <tr id="priceRange2" style="background-color: #e8e8e8;">
-                <td colspan="3" style="text-align:left;padding:5px 5px 5px 5px;">
-                    <label>Prezzo tra</label>
-                </td>
-            </tr>
-            <tr id="priceRange3" style="background-color: #e8e8e8;">
-                <td style="text-align:left;padding:0 5px 5px 5px;">
-                    <input onkeypress="return filterNumericInput(event);" placeholder="Prezzo" maxlength="7" class="plaque" style="width:35%" id="priceMin.value" name="priceMin.value" value="">
-                    &nbsp;<label>e</label>&nbsp;
-                    <input onkeypress="return filterNumericInput(event);" placeholder="Prezzo" maxlength="7" class="plaque" style="width:35%" id="priceMax.value" name="priceMax.value" value="">
-                </td>
-                <td colspan="2">
-                    <input type="image" src="/ecari-auktion/resources/images/auctionplate/bigSearch.gif" onclick="Javascript:hideSearchTemplate();setRecherche(3);" class="icon" style="padding-left:5px;width:28px;height:28px;opacity:0.6;">
-                    
-                </td>
-            </tr>
-        </tbody></table>
-        </form>
-    </div>
- <!-- *************************** End of popup selection div for < 720 pixel devices *************************** -->
-
-</div>
-    </div>
-</div>
-
-    <div id="tabContent1" style="width:100%;margin: 0px;margin-top:10px;">
-        <div class="box" style="border-bottom-width:0px;">
-            
-            
-                <div>
-    <div class="carContent">
-        <div>
-    <!-- *** auctionPage.html [auctionHeader]  -->
-    </div><table border="0" style="padding:10px;width:100%;" align="center">
-            <thead>
-    <tr class="L">
-        <th class="colHead2" width="90px">&nbsp;</th>
-        <th class="colHead2"><label>Prezzo iniziale</label></th>
-        <th class="colHead2">Aumento minimo</th>
-        <th class="colHead2"><label>Prezzo attuale</label></th>
-        <th class="colHead2">Fine dell'asta</th>
-        <th class="colHead2">Numero di offerte</th>
-        <th style="width:120px;text-align:left;padding-left:2px;" class="colHead2">Ultimo offerente</th>
-        
-        <!--<th class="colHead2 XS" style="border-radius: 0 10px 0 0">&nbsp;</th>-->
-        <th class="colHead2" style="min-width:24px;max-width:24px; border-radius: 0 10px 0 0;">&nbsp;</th>
-    </tr>
-    </thead>
-
-            <tbody>
-            
-    
-        
-    
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        <tr class="L" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td>
-                <a onclick="openDetails(1422)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">195</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td class="amount">3'000</td>
-            <td class="amount">100</td>
-            <td class="amount">10'500</td>
-            <td class="closingTime" style="text-align: center">9 giorni 08:51:10</td>
-            <td>6</td>
-            <td style="text-align:left;padding-left:2px;">montor</td>
-            
-            <td>
-                <a onclick="openDetails(1422)" href="#">
-                    <img src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon" align="center">
-                </a>
-            </td>
-        </tr>
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        <tr class="M">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1422)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">195</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">10'500</td>
-            <td colspan="2" class="bidCount" style="text-align:right;padding-right:5px;width:33%;">
-                <img src="/ecari-auktion/resources/images/auctionplate/bidder.gif" style="vertical-align:-5px;opacity:0.4;">
-                &nbsp;
-                <label style="font-size:12pt;">montor</label>
-            </td>
-            
-        </tr>
-        <tr class="M" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-            <td style="text-align:right;padding-right:5px;" onclick="openDetails(1422)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label style="font-size:12pt;">6</label>
-            </td>
-        </tr>
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        <tr class="S">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1422)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">195</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">10'500</td>
-            <td class="bidCount" onclick="openDetails(1422)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>6</label>
-            </td>
-        </tr>
-        <tr class="S">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">195</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">10'500</td>
-            <td class="bidCount" onclick="openDetails(1422)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>6</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        <tr class="L" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td>
-                <a onclick="openDetails(1421)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">10492</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td class="amount">800</td>
-            <td class="amount">50</td>
-            <td class="amount">900</td>
-            <td class="closingTime" style="text-align: center">9 giorni 08:51:10</td>
-            <td>2</td>
-            <td style="text-align:left;padding-left:2px;">t3rron</td>
-            
-            <td>
-                <a onclick="openDetails(1421)" href="#">
-                    <img src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon" align="center">
-                </a>
-            </td>
-        </tr>
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        <tr class="M">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1421)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">10492</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td colspan="2" class="bidCount" style="text-align:right;padding-right:5px;width:33%;">
-                <img src="/ecari-auktion/resources/images/auctionplate/bidder.gif" style="vertical-align:-5px;opacity:0.4;">
-                &nbsp;
-                <label style="font-size:12pt;">t3rron</label>
-            </td>
-            
-        </tr>
-        <tr class="M" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-            <td style="text-align:right;padding-right:5px;" onclick="openDetails(1421)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label style="font-size:12pt;">2</label>
-            </td>
-        </tr>
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        <tr class="S">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1421)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">10492</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1421)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>2</label>
-            </td>
-        </tr>
-        <tr class="S">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">10492</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1421)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>2</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        <tr class="L" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td>
-                <a onclick="openDetails(1420)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">23335</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td class="amount">800</td>
-            <td class="amount">50</td>
-            <td class="amount">900</td>
-            <td class="closingTime" style="text-align: center">2 giorni 08:51:10</td>
-            <td>2</td>
-            <td style="text-align:left;padding-left:2px;">Willy2398</td>
-            
-            <td>
-                <a onclick="openDetails(1420)" href="#">
-                    <img src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon" align="center">
-                </a>
-            </td>
-        </tr>
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        <tr class="M">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1420)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">23335</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td colspan="2" class="bidCount" style="text-align:right;padding-right:5px;width:33%;">
-                <img src="/ecari-auktion/resources/images/auctionplate/bidder.gif" style="vertical-align:-5px;opacity:0.4;">
-                &nbsp;
-                <label style="font-size:12pt;">Willy2398</label>
-            </td>
-            
-        </tr>
-        <tr class="M" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-            <td style="text-align:right;padding-right:5px;" onclick="openDetails(1420)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label style="font-size:12pt;">2</label>
-            </td>
-        </tr>
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        <tr class="S">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1420)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">23335</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1420)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>2</label>
-            </td>
-        </tr>
-        <tr class="S">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">23335</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1420)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>2</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        <tr class="L" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td>
-                <a onclick="openDetails(1419)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">131111</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td class="amount">800</td>
-            <td class="amount">50</td>
-            <td class="amount">900</td>
-            <td class="closingTime" style="text-align: center">2 giorni 08:51:10</td>
-            <td>1</td>
-            <td style="text-align:left;padding-left:2px;">Fgalli</td>
-            
-            <td>
-                <a onclick="openDetails(1419)" href="#">
-                    <img src="/ecari-auktion/resources/images/auctionplate/search.gif" class="icon" align="center">
-                </a>
-            </td>
-        </tr>
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        <tr class="M">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1419)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">131111</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td colspan="2" class="bidCount" style="text-align:right;padding-right:5px;width:33%;">
-                <img src="/ecari-auktion/resources/images/auctionplate/bidder.gif" style="vertical-align:-5px;opacity:0.4;">
-                &nbsp;
-                <label style="font-size:12pt;">Fgalli</label>
-            </td>
-            
-        </tr>
-        <tr class="M" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-            <td style="text-align:right;padding-right:5px;" onclick="openDetails(1419)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label style="font-size:12pt;">1</label>
-            </td>
-        </tr>
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        <tr class="S">
-            <td rowspan="2" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-                <a onclick="openDetails(1419)" href="#">
-                    <div class="plaqueAuto">
-                        <div class="chImg"></div>
-                        <div class="canton"></div>
-                        <div class="cantonImg"></div>
-                        <div class="number">131111</div>
-                    </div>
-                </a>
-                
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1419)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>1</label>
-            </td>
-        </tr>
-        <tr class="S">
-            <td style="text-align:left;border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">131111</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1419)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>1</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-            </tbody>
-        </table>
-    </div>
-
-    <div class="bikeContent" style="display:none;">
-        <div>
-    <!-- *** auctionPage.html [auctionHeader]  -->
-    </div><table border="0" style="padding:10px;width:100%;" align="center">
-            <thead>
-    <tr class="L">
-        <th class="colHead2" width="90px">&nbsp;</th>
-        <th class="colHead2"><label>Prezzo iniziale</label></th>
-        <th class="colHead2">Aumento minimo</th>
-        <th class="colHead2"><label>Prezzo attuale</label></th>
-        <th class="colHead2">Fine dell'asta</th>
-        <th class="colHead2">Numero di offerte</th>
-        <th style="width:120px;text-align:left;padding-left:2px;" class="colHead2">Ultimo offerente</th>
-        
-        <!--<th class="colHead2 XS" style="border-radius: 0 10px 0 0">&nbsp;</th>-->
-        <th class="colHead2" style="min-width:24px;max-width:24px; border-radius: 0 10px 0 0;">&nbsp;</th>
-    </tr>
-    </thead>
-
-            <tbody>
-            
-    
-        
-    
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        
-        
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        
-        
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">195</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">10'500</td>
-            <td class="bidCount" onclick="openDetails(1422)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>6</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        
-        
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        
-        
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">10492</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1421)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>2</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">9 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        
-        
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        
-        
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">23335</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1420)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>2</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-        <!-- **************** Full presentation start *******( > 760 pixels wide) ************** -->
-        
-        <!-- **************** Full presentation end ***************** -->
-
-        <!--**************** Larger mobile device presentation (480 -760 pixels wide) ************** -->
-        
-        
-        <!--**************** Larger mobile device presentation end ************** -->
-
-        <!--**************** Smaller mobile device presentation (320-480 pixels wide) ************** -->
-        
-        
-        <!--**************** Smaller mobile device presentation end ************** -->
-
-        <!-- ***************** Minimum presentation ****************** -->
-        <!-- ************* Both auto and bike plaques displayed ****** -->
-        <tr class="XS">
-            <td rowspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/vehicle2small.gif" style="display:inline-block;vertical-align:-10px;opacity:0.9;">
-                
-            </td>
-            <td rowspan="2">
-                <div class="plaqueAuto">
-                    <div class="number">131111</div>
-                </div>
-            </td>
-            <td style="text-align:left;color:orange;font-size:15pt;" class="amount">900</td>
-            <td class="bidCount" onclick="openDetails(1419)">
-                <img src="/ecari-auktion/resources/images/auctionplate/hammer.gif" style="vertical-align:2px;opacity:0.6;">
-                <label>1</label>
-            </td>
-        </tr>
-        <tr class="XS" style="border-style:solid;border-color:#a0a0a0;border-width:0 0 1px 0;">
-            <td style="text-align:left;" colspan="2">
-                <img src="/ecari-auktion/resources/images/auctionplate/clock.gif" style="vertical-align:-2px;opacity:0.6;">
-                &nbsp;
-                <label class="closingTime">2 giorni 08:51:10</label>
-            </td>
-        </tr>
-        <!--***************** Minimum presentation ends ****************** -->
-
-    
-
-            </tbody>
-        </table>
-    </div>
-</div>
-            
-        </div>
-    </div>
-
-    <div id="tabContent2" style="width:100%;margin: 0px;margin-top:10px; display:none;">
-        <div class="box">
-            
-            
-                
-    <div class="carContent">
-        
-    <!-- *** inscriptionPage.html [inscriptionBody]  -->
-    
-        <div class="L" style="width: 100%;text-align: center;display: block;">
-            <label class="noPlateLabel">Nessuna targa disponibile</label>
-        </div>
-    
-    <div class="notXS">
-        
-        <div style="padding:10px;">
-            
-            
-        </div>
-    </div>
-
-    </div>
-    <div class="bikeContent" style="display: none">
-        
-    <!-- *** inscriptionPage.html [inscriptionBody]  -->
-    
-        <div class="L" style="width: 100%;text-align: center;display: block;">
-            <label class="noPlateLabel">Nessuna targa disponibile</label>
-        </div>
-    
-    <div class="notXS">
-        
-        <div style="padding:10px;">
-            
-            
-        </div>
-    </div>
-
-    </div>
-
-            
-        </div>
-    </div>
-    <div id="tabContent3" style="width:100%;margin: 0px;margin-top:10px; display:none;">
-        <div class="box">
-            
-            
-                
-    <div class="carContent">
-        
-    <!-- *** reservationPage.html [reservationBody]  -->
-    
-        <div class="L" style="width: 100%;text-align: center;display: block;">
-            <label class="noPlateLabel">Nessuna targa disponibile</label>
-        </div>
-    
-    <div class="notXS" style="padding: 10px;">
-        
-        
-    </div>
-
-    </div>
-    <div class="bikeContent" style="display: none">
-        
-    <!-- *** reservationPage.html [reservationBody]  -->
-    
-        <div class="L" style="width: 100%;text-align: center;display: block;">
-            <label class="noPlateLabel">Nessuna targa disponibile</label>
-        </div>
-    
-    <div class="notXS" style="padding: 10px;">
-        
-        
-    </div>
-
-    </div>
-
-            
-        </div>
-    </div>
-    <div id="tabContent4" style="width:100%;margin: 0px;margin-top:10px; display:none;">
-        <div class="box">
-            
-            
-                
-    <div class="carContent">
-        
-    <!-- *** reservationPage.html [reservationBody]  -->
-    
-        <div class="L" style="width: 100%;text-align: center;display: block;">
-            <label class="noPlateLabel">Nessuna targa disponibile</label>
-        </div>
-    
-    <div class="notXS" style="padding: 10px;">
-        
-        
-    </div>
-
-    </div>
-    <div class="bikeContent" style="display: none">
-        
-    <!-- *** reservationPage.html [reservationBody]  -->
-    
-        <div class="L" style="width: 100%;text-align: center;display: block;">
-            <label class="noPlateLabel">Nessuna targa disponibile</label>
-        </div>
-    
-    <div class="notXS" style="padding: 10px;">
-        
-        
-    </div>
-
-    </div>
-
-            
-        </div>
-    </div>
-    <div id="date" style="text-align:right;font-size:10px;padding-top:3px;padding-right:10px;">
-        <script>
-            var d = new Date();
-            var hours = ('0'+d.getHours()).slice(-2);
-            var minutes = ('0'+d.getMinutes()).slice(-2);
-            var date = ('0'+d.getDate()).slice(-2);
-            var months = ('0'+(parseInt(d.getMonth()+1))).slice(-2);
-            document.write(date + "." + months + "." + d.getFullYear() + "  " + hours + ":" + minutes);
-        </script>06.02.2026  11:08
-    </div>
-
-    <div id="modalDialog" class="modalDialog" style="display: none"></div>
-
-</div>
-</div>
-    </div>
-
-    <!-- specific body content-->
-    <div class="ecari-main">
-        
-
-        
-
-        
-        
-
-        <div class="ecari-errors">
-            <div>
-    <div>
-        
-    </div>
-</div>
-        </div>
-    </div>
-
-    <div class="ecari-contentrightmargin" style="display:inline-block;">
-        <div>
-    </div>
-    </div>
-</div>
-<!-- common footer -->
-<div class="ecari-footer">
-    <div>
-    <div class="footerDiv">
-        <div class="footerMenu"></div>
-        <div class="footer">
-            <a href="http://www.ti.ch/circolazione">
-                <div class="footerBackground">
-                    <div class="footerImage"></div>
-                </div>
-            </a>
-            <div id="canton" class="footer1">©
-                <script>
-                    var d = new Date();
-                    document.write(d.getFullYear());
-                </script>2026&nbsp;-&nbsp;
-                <span>Ticino</span>
-            </div>
-            <div id="helpline" class="footer2 notM">
-                <a href="http://www.ti.ch/circolazione" style="text-decoration: none;">
-                    <span>Sezione della Circolazione</span>
-                </a>
-                <span>, Ala Munda, 6528 Camorino, 091 814 97 00, di-sc.servizicentrali@ti.ch</span>
-            </div>
-            <div class="footer3 notM">
-                <span></span>
             </div>
         </div>
-    </div>
-</div>
-</div>
 
-<script src="//browser-update.org/update.min.js"></script><script src="//browser-update.org/update.show.min.js"></script></body></html>
+      </div>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="/dist/js/bootstrap.min.js"></script>
+    <script src="/dist/js/docs.min.js"></script>
+    <!-- No cookies active <script src="/dist/js/cookie.js"></script> -->
+    <script src="//rawgithub.com/ashleydw/lightbox/master/dist/ekko-lightbox.js"></script>
+    <script type="text/javascript">
+          $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+              event.preventDefault();
+              $(this).ekkoLightbox();
+          });
+    </script>
+    
+   
+  
+
+</body></html>

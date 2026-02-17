@@ -1,0 +1,490 @@
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 35, in main
+    print("\U0001f310 Testing Ticino site directly...")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f310' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 35, in main
+    print("\U0001f310 Testing Ticino site directly...")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f310' in position 0: character maps to <undefined>
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65365
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xbb5093
+	0xbb50d4
+	0x9ab490
+	0x9f58da
+	0x9f5b7b
+	0xa37b42
+	0xa18204
+	0xa35341
+	0xa17f56
+	0x9e96c9
+	0x9ea484
+	0xe07e34
+	0xe030c9
+	0xe20add
+	0xbcdb38
+	0xbd58ad
+	0xbbd848
+	0xbbda12
+	0xba75fa
+	0x76185d49
+	0x77bad5db
+	0x77bad561
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65365
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xc85093
+	0xc850d4
+	0xa7b490
+	0xac58da
+	0xac5b7b
+	0xb07b42
+	0xae8204
+	0xb05341
+	0xae7f56
+	0xab96c9
+	0xaba484
+	0xed7e34
+	0xed30c9
+	0xef0add
+	0xc9db38
+	0xca58ad
+	0xc8d848
+	0xc8da12
+	0xc775fa
+	0x76185d49
+	0x77bad5db
+	0x77bad561
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65365
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x815093
+	0x8150d4
+	0x60b490
+	0x6558da
+	0x655b7b
+	0x697b42
+	0x678204
+	0x695341
+	0x677f56
+	0x6496c9
+	0x64a484
+	0xa67e34
+	0xa630c9
+	0xa80add
+	0x82db38
+	0x8358ad
+	0x81d848
+	0x81da12
+	0x8075fa
+	0x76185d49
+	0x77bad5db
+	0x77bad561
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65371
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xeb5093
+	0xeb50d4
+	0xcab490
+	0xcf58da
+	0xcf5b7b
+	0xd37b42
+	0xd18204
+	0xd35341
+	0xd17f56
+	0xce96c9
+	0xcea484
+	0x1107e34
+	0x11030c9
+	0x1120add
+	0xecdb38
+	0xed58ad
+	0xebd848
+	0xebda12
+	0xea75fa
+	0x75915d49
+	0x76f9d5db
+	0x76f9d561
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65371
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xd05093
+	0xd050d4
+	0xafb490
+	0xb458da
+	0xb45b7b
+	0xb87b42
+	0xb68204
+	0xb85341
+	0xb67f56
+	0xb396c9
+	0xb3a484
+	0xf57e34
+	0xf530c9
+	0xf70add
+	0xd1db38
+	0xd258ad
+	0xd0d848
+	0xd0da12
+	0xcf75fa
+	0x75915d49
+	0x76f9d5db
+	0x76f9d561
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65369
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x555093
+	0x5550d4
+	0x34b490
+	0x3958da
+	0x395b7b
+	0x3d7b42
+	0x3b8204
+	0x3d5341
+	0x3b7f56
+	0x3896c9
+	0x38a484
+	0x7a7e34
+	0x7a30c9
+	0x7c0add
+	0x56db38
+	0x5758ad
+	0x55d848
+	0x55da12
+	0x5475fa
+	0x75085d49
+	0x776cd83b
+	0x776cd7c1
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65403
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x715093
+	0x7150d4
+	0x50b490
+	0x5558da
+	0x555b7b
+	0x597b42
+	0x578204
+	0x595341
+	0x577f56
+	0x5496c9
+	0x54a484
+	0x967e34
+	0x9630c9
+	0x980add
+	0x72db38
+	0x7358ad
+	0x71d848
+	0x71da12
+	0x7075fa
+	0x75085d49
+	0x776cd83b
+	0x776cd7c1
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65364
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=144.0.7559.133); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0xf55093
+	0xf550d4
+	0xd4b490
+	0xd958da
+	0xd95b7b
+	0xdd7b42
+	0xdb8204
+	0xdd5341
+	0xdb7f56
+	0xd896c9
+	0xd8a484
+	0x11a7e34
+	0x11a30c9
+	0x11c0add
+	0xf6db38
+	0xf758ad
+	0xf5d848
+	0xf5da12
+	0xf475fa
+	0x75085d49
+	0x776cd83b
+	0x776cd7c1
+
+Scraped 4 auction plates.
