@@ -1,5 +1,8 @@
 name: Carie Auktion Scraper
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '55 17 * * *'  # 7:55 PM UTC (8:55 PM CET, adjust if needed)
@@ -14,6 +17,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Fetch full history to allow commits back to the repo
 
     - name: Set up Python
       uses: actions/setup-python@v5
