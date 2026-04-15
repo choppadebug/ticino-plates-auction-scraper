@@ -1,0 +1,59 @@
+name: Deploy Analytics Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - site/**
+      - data/**
+      - .github/workflows/deploy_pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build static artifact
+        run: |
+          mkdir -p public
+          cp -R site/. public/
+          mkdir -p public/data
+          if [ -f data/plates.db ]; then
+            cp data/plates.db public/data/plates.db
+          fi
+          if [ -f data/plates_merged.csv ]; then
+            cp data/plates_merged.csv public/data/plates_merged.csv
+          fi
+          touch public/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

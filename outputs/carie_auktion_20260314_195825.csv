@@ -1,0 +1,16 @@
+plate_number,starting_price,min_increment,current_offer,time_to_go,offers_number
+850,3'000,100,15'100,4 giorni 00:01:30,16
+10902,3'000,50,850,8 giorni 00:01:29,1
+90889,800,50,900,8 giorni 00:01:29,2
+115533,800,50,650,4 giorni 00:01:29,2
+30641,800,N/A,N/A,N/A,N/A
+38724,800,N/A,N/A,N/A,N/A
+39621,600,N/A,N/A,N/A,N/A
+41239,600,N/A,N/A,N/A,N/A
+47651,450,N/A,N/A,N/A,N/A
+60128,450,N/A,N/A,N/A,N/A
+63702,450,N/A,N/A,N/A,N/A
+74513,400,N/A,N/A,N/A,N/A
+99753,400,N/A,N/A,N/A,N/A
+111356,350,N/A,N/A,N/A,N/A
+250444,350,N/A,N/A,N/A,N/A

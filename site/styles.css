@@ -1,0 +1,243 @@
+:root {
+  --bg: #0d121f;
+  --bg-soft: #151d30;
+  --card: rgba(13, 18, 31, 0.8);
+  --ink: #f4f6ff;
+  --ink-dim: #aab4ce;
+  --mint: #50ffaf;
+  --cyan: #64d9ff;
+  --amber: #ffbf66;
+  --danger: #ff7070;
+  --line: rgba(255, 255, 255, 0.12);
+  --shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: radial-gradient(circle at 10% 10%, #253559 0%, var(--bg) 45%, #080b14 100%);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.aurora {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 70% 20%, rgba(80, 255, 175, 0.14), transparent 42%),
+    radial-gradient(circle at 25% 75%, rgba(100, 217, 255, 0.12), transparent 36%);
+}
+
+.shell {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 18px 36px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 3.1rem);
+  letter-spacing: 0.01em;
+}
+
+.kicker {
+  margin: 0 0 6px;
+  color: var(--mint);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 10px 0 14px;
+  max-width: 760px;
+  color: var(--ink-dim);
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+}
+
+.pill.loading {
+  border-color: rgba(255, 191, 102, 0.4);
+  color: var(--amber);
+}
+
+.cards {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.card .label {
+  margin: 0;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
+
+.card .value {
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.panel {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  padding: 14px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--mint), var(--cyan));
+  color: #061018;
+  padding: 8px 13px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+textarea {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  resize: vertical;
+  padding: 12px;
+  font-family: "IBM Plex Mono", monospace;
+  background: var(--bg-soft);
+  color: var(--ink);
+}
+
+.muted {
+  color: var(--ink-dim);
+  font-size: 0.82rem;
+}
+
+.error {
+  margin-top: 8px;
+  padding: 9px 10px;
+  border: 1px solid rgba(255, 112, 112, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 112, 112, 0.12);
+  color: #ffd8d8;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8rem;
+  white-space: pre-wrap;
+}
+
+.results {
+  margin-top: 10px;
+  overflow: auto;
+  max-height: 420px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  padding: 7px 9px;
+  white-space: nowrap;
+}
+
+th {
+  color: var(--mint);
+  position: sticky;
+  top: 0;
+  background: #121c30;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.chart {
+  min-height: 280px;
+}
+
+.footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--ink-dim);
+  font-size: 0.84rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 14px;
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--mint);
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

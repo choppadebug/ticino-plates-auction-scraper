@@ -18,13 +18,6 @@ def main():
     proxy_enabled = os.getenv('USE_PROXY', 'false').lower() == 'true'
     driver = setup_stealth_chrome(proxy_enabled=proxy_enabled)
 
-    options = Options()
-    options.add_argument("--headless=new")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-
-    driver = setup_stealth_chrome()
-
     output_dir = Path("outputs")
     output_dir.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -67,6 +60,7 @@ def main():
                 print(f"Trying to scrape row {row_index}...")
                 plate_numbers.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[2]/a/div').get_attribute('innerText'))
                 starting_prices.append("N/A")
+                min_increments.append("N/A")
                 current_offers.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[4]').get_attribute('innerText'))
                 time_to_go_list.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[3]').get_attribute('innerText'))
                 offers_numbers.append(driver.find_element(By.XPATH, f'//*[@id="CAR"]/table/tbody/tr[{row_index}]/th[5]/span[1]').get_attribute('innerText'))
@@ -106,18 +100,19 @@ def main():
     with out_file.open("w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(
-            ["plate_number", "starting_price", "current_offer", "time_to_go", "offers_number"]
+            ["plate_number", "starting_price", "min_increment", "current_offer", "time_to_go", "offers_number"]
         )
         for row in zip(
             plate_numbers,
             starting_prices,
+            min_increments,
             current_offers,
             time_to_go_list,
             offers_numbers,
         ):
-            plate, start, cur, tgo, offers = row
+            plate, start, min_inc, cur, tgo, offers = row
             plate_clean = clean_plate(plate)
-            cleaned_row = (plate_clean, start, cur, tgo, offers)
+            cleaned_row = (plate_clean, start, min_inc, cur, tgo, offers)
             writer.writerow(cleaned_row)
             print(f"Wrote row: {cleaned_row}")
             

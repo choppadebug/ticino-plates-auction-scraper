@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticino Plates Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="aurora"></div>
+    <main class="shell">
+      <header class="hero">
+        <p class="kicker">GitHub Pages + DuckDB WASM</p>
+        <h1>Ticino Plate Market Observatory</h1>
+        <p class="subtitle">
+          Query the daily snapshots directly in your browser. No backend.
+        </p>
+        <div class="meta">
+          <span id="status-pill" class="pill loading">Booting database...</span>
+          <span id="snapshot-pill" class="pill">Snapshot: --</span>
+        </div>
+      </header>
+
+      <section class="cards" id="metrics"></section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>SQL Playground</h2>
+          <button id="run-query" type="button">Run Query</button>
+        </div>
+        <textarea id="query-input" spellcheck="false"></textarea>
+        <p id="query-meta" class="muted"></p>
+        <div id="query-error" class="error" hidden></div>
+        <div id="query-results" class="results"></div>
+      </section>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>Daily Max Offer</h2>
+          <div id="chart-max-offer" class="chart"></div>
+        </article>
+        <article class="panel">
+          <h2>Top Plates (Latest Snapshot)</h2>
+          <div id="chart-top-plates" class="chart"></div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <span>Data source: daily GitHub Action scraper.</span>
+        <div class="footer-links">
+          <a href="./data/plates.db">Download DB</a>
+          <a href="./data/plates_merged.csv">Download merged CSV</a>
+        </div>
+      </footer>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
