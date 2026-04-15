@@ -22,6 +22,9 @@ jobs:
       with:
         fetch-depth: 0  # Fetch full history to allow commits back to the repo
 
+    - name: Sync with remote branch
+      run: git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -74,5 +77,4 @@ jobs:
           exit 0
         fi
         git commit -m "Update scrape snapshot and database $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-        git pull --rebase origin "${GITHUB_REF_NAME}"
         git push

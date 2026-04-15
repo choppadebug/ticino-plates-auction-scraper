@@ -43,10 +43,11 @@ def main():
         print("Page source length:", len(driver.page_source))
         print("Contains 'tabContent':", 'tabContent' in driver.page_source)
 
-        # Save HTML for inspection
-        with open("debug_page.html", "w", encoding="utf-8") as f:
-            f.write(driver.page_source)
-        print("Debug HTML saved")
+        # Keep the debug dump out of CI so the workflow stays on a clean tree.
+        if os.getenv("GITHUB_ACTIONS", "false").lower() != "true":
+            with open("debug_page.html", "w", encoding="utf-8") as f:
+                f.write(driver.page_source)
+            print("Debug HTML saved")
 
         # Scraping logic
         plate_numbers = []
