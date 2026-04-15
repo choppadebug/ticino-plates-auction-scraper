@@ -2,9 +2,9 @@ import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.30.0
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
 
 const DB_FILE = "plates.db";
-const DB_URL = "./data/plates.db";
+const DB_URL = new URL("./data/plates.db", window.location.href).toString();
 const CSV_FILE = "plates_merged.csv";
-const CSV_URL = "./data/plates_merged.csv";
+const CSV_URL = new URL("./data/plates_merged.csv", window.location.href).toString();
 
 const statusPill = document.querySelector("#status-pill");
 const snapshotPill = document.querySelector("#snapshot-pill");
