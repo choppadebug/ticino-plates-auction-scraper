@@ -110,13 +110,10 @@ async function loadData() {
 function setDefaultQuery() {
   queryInput.value = [
     `SELECT`,
-    `  scraped_date,`,
-    `  listing_type,`,
-    `  COUNT(*) AS rows_count,`,
-    `  MAX(COALESCE(current_offer, starting_price)) AS max_visible_price`,
+    `  plate_number, MAX(current_offer) AS final_price`,
     `FROM ${tableRef}`,
-    `GROUP BY scraped_date, listing_type`,
-    `ORDER BY scraped_date DESC, listing_type`,
+    `GROUP BY plate_number`,
+    `ORDER BY final_price DESC`,
     `LIMIT 120;`,
   ].join("\n");
 }
