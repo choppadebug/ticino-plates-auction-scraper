@@ -56,6 +56,9 @@ jobs:
 
     - name: Build merged CSV + DuckDB database
       run: python src/build_data_assets.py
+    
+    - name: Build BI analytics and validate data
+      run: python src/run_analytics.py
 
     - name: Upload results as artifact
       if: always()

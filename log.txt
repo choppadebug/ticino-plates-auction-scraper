@@ -864,3 +864,934 @@ Stacktrace:
 	ntdll!RtlGetAppContainerNamedObjectPath [0x77ccd7a1+231]
 
 Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65415
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=148.0.7778.179); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xefb593+105d3]
+	chromedriver!GetHandleVerifier [0xefb6c4+10704]
+	chromedriver!(No symbol) [0xd01ea0]
+	chromedriver!(No symbol) [0xd4b28a]
+	chromedriver!(No symbol) [0xd4b52b]
+	chromedriver!(No symbol) [0xd8d052]
+	chromedriver!(No symbol) [0xd6d7c4]
+	chromedriver!(No symbol) [0xd8a936]
+	chromedriver!(No symbol) [0xd6d516]
+	chromedriver!(No symbol) [0xd408e9]
+	chromedriver!(No symbol) [0xd416a4]
+	chromedriver!GetHandleVerifier [0x1183014+298054]
+	chromedriver!GetHandleVerifier [0x117e603+293643]
+	chromedriver!GetHandleVerifier [0x119ea05+2b3a45]
+	chromedriver!GetHandleVerifier [0xf154e8+2a528]
+	chromedriver!GetHandleVerifier [0xf1cd1d+31d5d]
+	chromedriver!GetHandleVerifier [0xf03e68+18ea8]
+	chromedriver!GetHandleVerifier [0xf04015+19055]
+	chromedriver!GetHandleVerifier [0xeed65f+269f]
+	KERNEL32!BaseThreadInitThunk [0x76cf5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d83b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d7c1+231]
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65380
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 15:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=148.0.7778.179); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xb7b593+105d3]
+	chromedriver!GetHandleVerifier [0xb7b6c4+10704]
+	chromedriver!(No symbol) [0x981ea0]
+	chromedriver!(No symbol) [0x9cb28a]
+	chromedriver!(No symbol) [0x9cb52b]
+	chromedriver!(No symbol) [0xa0d052]
+	chromedriver!(No symbol) [0x9ed7c4]
+	chromedriver!(No symbol) [0xa0a936]
+	chromedriver!(No symbol) [0x9ed516]
+	chromedriver!(No symbol) [0x9c08e9]
+	chromedriver!(No symbol) [0x9c16a4]
+	chromedriver!GetHandleVerifier [0xe03014+298054]
+	chromedriver!GetHandleVerifier [0xdfe603+293643]
+	chromedriver!GetHandleVerifier [0xe1ea05+2b3a45]
+	chromedriver!GetHandleVerifier [0xb954e8+2a528]
+	chromedriver!GetHandleVerifier [0xb9cd1d+31d5d]
+	chromedriver!GetHandleVerifier [0xb83e68+18ea8]
+	chromedriver!GetHandleVerifier [0xb84015+19055]
+	chromedriver!GetHandleVerifier [0xb6d65f+269f]
+	KERNEL32!BaseThreadInitThunk [0x76cf5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77e6d83b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77e6d7c1+231]
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65135
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 15:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=149.0.7827.53); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xf0fa13+106c3]
+	chromedriver!GetHandleVerifier [0xf0fa54+10704]
+	chromedriver!(No symbol) [0xd0a830]
+	chromedriver!(No symbol) [0xd53cdb]
+	chromedriver!(No symbol) [0xd53efb]
+	chromedriver!(No symbol) [0xd95a92]
+	chromedriver!(No symbol) [0xd762d4]
+	chromedriver!(No symbol) [0xd932fa]
+	chromedriver!(No symbol) [0xd76026]
+	chromedriver!(No symbol) [0xd49289]
+	chromedriver!(No symbol) [0xd4a054]
+	chromedriver!GetHandleVerifier [0x11944fa+2951aa]
+	chromedriver!GetHandleVerifier [0x118fb56+290806]
+	chromedriver!GetHandleVerifier [0x11aff8b+2b0c3b]
+	chromedriver!GetHandleVerifier [0xf29ed6+2ab86]
+	chromedriver!GetHandleVerifier [0xf3124d+31efd]
+	chromedriver!GetHandleVerifier [0xf183d8+19088]
+	chromedriver!GetHandleVerifier [0xf18585+19235]
+	chromedriver!GetHandleVerifier [0xf0125f+1f0f]
+	KERNEL32!BaseThreadInitThunk [0x75105d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a1d83b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a1d7c1+231]
+
+Scraped 4 auction plates.
+Traceback (most recent call last):
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 455, in wrap_socket
+    return self.sslsocket_class._create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1042, in _create
+    self.do_handshake()
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\ssl.py", line 1320, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\core\http.py", line 32, in get
+    resp = requests.get(
+           ^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\requests\adapters.py", line 659, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 18, in main
+    driver = setup_stealth_chrome(proxy_enabled=proxy_enabled)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 156, in setup_stealth_chrome
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\chrome.py", line 40, in install
+    driver_path = self._get_driver_binary_path(self.driver)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\core\manager.py", line 35, in _get_driver_binary_path
+    binary_path = self._cache_manager.find_driver(driver)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\core\driver_cache.py", line 107, in find_driver
+    driver_version = self.get_cache_key_driver_version(driver)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\core\driver_cache.py", line 154, in get_cache_key_driver_version
+    return driver.get_driver_version_to_download()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\core\driver.py", line 48, in get_driver_version_to_download
+    return self.get_latest_release_version()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\drivers\chrome.py", line 59, in get_latest_release_version
+    response = self._http_client.get(url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\webdriver_manager\core\http.py", line 35, in get
+    raise exceptions.ConnectionError(f"Could not reach host. Are you offline?")
+requests.exceptions.ConnectionError: Could not reach host. Are you offline?
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 64890
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 15:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+DEBUG row 22:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=149.0.7827.53); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x126a543+103f3]
+	chromedriver!GetHandleVerifier [0x126a584+10434]
+	chromedriver!(No symbol) [0x106a700]
+	chromedriver!(No symbol) [0x10b3bab]
+	chromedriver!(No symbol) [0x10b3dcb]
+	chromedriver!(No symbol) [0x10f5b32]
+	chromedriver!(No symbol) [0x10d6114]
+	chromedriver!(No symbol) [0x10f339a]
+	chromedriver!(No symbol) [0x10d5e66]
+	chromedriver!(No symbol) [0x10a9159]
+	chromedriver!(No symbol) [0x10a9f24]
+	chromedriver!GetHandleVerifier [0x14f4bba+29aa6a]
+	chromedriver!GetHandleVerifier [0x14f0119+295fc9]
+	chromedriver!GetHandleVerifier [0x151103e+2b6eee]
+	chromedriver!GetHandleVerifier [0x12837f6+296a6]
+	chromedriver!GetHandleVerifier [0x128a91d+307cd]
+	chromedriver!GetHandleVerifier [0x1272d18+18bc8]
+	chromedriver!GetHandleVerifier [0x1272ec5+18d75]
+	chromedriver!GetHandleVerifier [0x125c05f+1f0f]
+	KERNEL32!BaseThreadInitThunk [0x75185d49+19]
+	ntdll!RtlInitializeExceptionChain [0x775de12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x775de0b1+231]
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Cantone Ticino - Pagina non disponibile
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 6876
+Contains 'tabContent': False
+Debug HTML saved
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[1]/td[2]"}
+  (Session info: chrome=149.0.7827.53); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x89a543+103f3]
+	chromedriver!GetHandleVerifier [0x89a584+10434]
+	chromedriver!(No symbol) [0x69a700]
+	chromedriver!(No symbol) [0x6e3bab]
+	chromedriver!(No symbol) [0x6e3dcb]
+	chromedriver!(No symbol) [0x725b32]
+	chromedriver!(No symbol) [0x706114]
+	chromedriver!(No symbol) [0x72339a]
+	chromedriver!(No symbol) [0x705e66]
+	chromedriver!(No symbol) [0x6d9159]
+	chromedriver!(No symbol) [0x6d9f24]
+	chromedriver!GetHandleVerifier [0xb24bba+29aa6a]
+	chromedriver!GetHandleVerifier [0xb20119+295fc9]
+	chromedriver!GetHandleVerifier [0xb4103e+2b6eee]
+	chromedriver!GetHandleVerifier [0x8b37f6+296a6]
+	chromedriver!GetHandleVerifier [0x8ba91d+307cd]
+	chromedriver!GetHandleVerifier [0x8a2d18+18bc8]
+	chromedriver!GetHandleVerifier [0x8a2ec5+18d75]
+	chromedriver!GetHandleVerifier [0x88c05f+1f0f]
+	KERNEL32!BaseThreadInitThunk [0x76e15d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77b5e12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77b5e0b1+231]
+
+Scraped 0 auction plates.
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 99, in main
+    driver.execute_script("selectTab('3');")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 414, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: selectTab is not defined
+  (Session info: chrome=149.0.7827.53)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x89a543+103f3]
+	chromedriver!GetHandleVerifier [0x89a584+10434]
+	chromedriver!(No symbol) [0x69a700]
+	chromedriver!(No symbol) [0x6a1465]
+	chromedriver!(No symbol) [0x6a375d]
+	chromedriver!(No symbol) [0x7240e6]
+	chromedriver!(No symbol) [0x7060cc]
+	chromedriver!(No symbol) [0x72339a]
+	chromedriver!(No symbol) [0x705e66]
+	chromedriver!(No symbol) [0x6d9159]
+	chromedriver!(No symbol) [0x6d9f24]
+	chromedriver!GetHandleVerifier [0xb24bba+29aa6a]
+	chromedriver!GetHandleVerifier [0xb20119+295fc9]
+	chromedriver!GetHandleVerifier [0xb4103e+2b6eee]
+	chromedriver!GetHandleVerifier [0x8b37f6+296a6]
+	chromedriver!GetHandleVerifier [0x8ba91d+307cd]
+	chromedriver!GetHandleVerifier [0x8a2d18+18bc8]
+	chromedriver!GetHandleVerifier [0x8a2ec5+18d75]
+	chromedriver!GetHandleVerifier [0x88c05f+1f0f]
+	KERNEL32!BaseThreadInitThunk [0x76e15d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77b5e12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77b5e0b1+231]
+
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 65147
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '3'000'
+  innerText: '3'000'
+  textContent: '3'000'
+  innerHTML: '3'000'
+  Visible: True
+DEBUG row 8:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 15:
+  .text: '800'
+  innerText: '800'
+  textContent: '800'
+  innerHTML: '800'
+  Visible: True
+DEBUG row 22:
+  .text: '400'
+  innerText: '400'
+  textContent: '400'
+  innerHTML: '400'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[29]/td[2]"}
+  (Session info: chrome=151.0.7922.174); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x383353+fd93]
+	chromedriver!GetHandleVerifier [0x383394+fdd4]
+	chromedriver!(No symbol) [0x179220]
+	chromedriver!(No symbol) [0x1c32fb]
+	chromedriver!(No symbol) [0x1c351b]
+	chromedriver!(No symbol) [0x205b82]
+	chromedriver!(No symbol) [0x1e58c4]
+	chromedriver!(No symbol) [0x2034d9]
+	chromedriver!(No symbol) [0x1e5616]
+	chromedriver!(No symbol) [0x1b87e9]
+	chromedriver!(No symbol) [0x1b95b4]
+	chromedriver!GetHandleVerifier [0x61f51a+2abf5a]
+	chromedriver!GetHandleVerifier [0x61aa21+2a7461]
+	chromedriver!GetHandleVerifier [0x3af374+3bdb4]
+	chromedriver!GetHandleVerifier [0x39e036+2aa76]
+	chromedriver!GetHandleVerifier [0x3a4efd+3193d]
+	chromedriver!GetHandleVerifier [0x38c8a8+192e8]
+	chromedriver!GetHandleVerifier [0x38ca55+19495]
+	chromedriver!GetHandleVerifier [0x3753ff+1e3f]
+	KERNEL32!BaseThreadInitThunk [0x76125d49+19]
+	ntdll!RtlInitializeExceptionChain [0x76fce12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76fce0b1+231]
+	(No symbol) [(nil)]
+
+Scraped 4 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Cantone Ticino - Pagina non disponibile
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 6876
+Contains 'tabContent': False
+Debug HTML saved
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[1]/td[2]"}
+  (Session info: chrome=152.0.7977.77); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xa31863+4fe3]
+	chromedriver!(No symbol) [0x991694]
+	chromedriver!(No symbol) [0x82bf90]
+	chromedriver!(No symbol) [0x875f1d]
+	chromedriver!(No symbol) [0x87612b]
+	chromedriver!(No symbol) [0x8b8a92]
+	chromedriver!(No symbol) [0x898614]
+	chromedriver!(No symbol) [0x8b631f]
+	chromedriver!(No symbol) [0x898366]
+	chromedriver!(No symbol) [0x86b4a9]
+	chromedriver!(No symbol) [0x86c1b4]
+	chromedriver!GetHandleVerifier [0xdb6a2a+38a1aa]
+	chromedriver!GetHandleVerifier [0xddd702+3b0e82]
+	chromedriver!GetHandleVerifier [0xaff272+d29f2]
+	chromedriver!GetHandleVerifier [0xb05263+d89e3]
+	chromedriver!(No symbol) [0x99c54d]
+	chromedriver!(No symbol) [0x999358]
+	chromedriver!(No symbol) [0x999505]
+	chromedriver!(No symbol) [0x9887a7]
+	KERNEL32!BaseThreadInitThunk [0x76125d49+19]
+	ntdll!RtlInitializeExceptionChain [0x76fce12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76fce0b1+231]
+
+Scraped 0 auction plates.
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 99, in main
+    driver.execute_script("selectTab('3');")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 414, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: selectTab is not defined
+  (Session info: chrome=152.0.7977.77)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xa31863+4fe3]
+	chromedriver!(No symbol) [0x991694]
+	chromedriver!(No symbol) [0x82bf90]
+	chromedriver!(No symbol) [0x832d75]
+	chromedriver!(No symbol) [0x83502d]
+	chromedriver!(No symbol) [0x8b7066]
+	chromedriver!(No symbol) [0x8985cc]
+	chromedriver!(No symbol) [0x8b631f]
+	chromedriver!(No symbol) [0x898366]
+	chromedriver!(No symbol) [0x86b4a9]
+	chromedriver!(No symbol) [0x86c1b4]
+	chromedriver!GetHandleVerifier [0xdb6a2a+38a1aa]
+	chromedriver!GetHandleVerifier [0xddd702+3b0e82]
+	chromedriver!GetHandleVerifier [0xaff272+d29f2]
+	chromedriver!GetHandleVerifier [0xb05263+d89e3]
+	chromedriver!(No symbol) [0x99c54d]
+	chromedriver!(No symbol) [0x999358]
+	chromedriver!(No symbol) [0x999505]
+	chromedriver!(No symbol) [0x9887a7]
+	KERNEL32!BaseThreadInitThunk [0x76125d49+19]
+	ntdll!RtlInitializeExceptionChain [0x76fce12b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x76fce0b1+231]
+
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Cantone Ticino - Pagina non disponibile
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 6876
+Contains 'tabContent': False
+Debug HTML saved
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[1]/td[2]"}
+  (Session info: chrome=153.0.8010.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x821c73+4e33]
+	chromedriver!(No symbol) [0x73d194]
+	chromedriver!(No symbol) [0x57c0b0]
+	chromedriver!(No symbol) [0x5c7066]
+	chromedriver!(No symbol) [0x5c723b]
+	chromedriver!(No symbol) [0x60b782]
+	chromedriver!(No symbol) [0x5e9af4]
+	chromedriver!(No symbol) [0x608ff3]
+	chromedriver!(No symbol) [0x5e9846]
+	chromedriver!(No symbol) [0x5bbe6a]
+	chromedriver!(No symbol) [0x5bcb44]
+	chromedriver!GetHandleVerifier [0xc8798a+46ab4a]
+	chromedriver!GetHandleVerifier [0xca946b+48c62b]
+	chromedriver!GetHandleVerifier [0x9442c2+127482]
+	chromedriver!GetHandleVerifier [0x94afd3+12e193]
+	chromedriver!(No symbol) [0x74b2b8]
+	chromedriver!(No symbol) [0x7465e8]
+	chromedriver!(No symbol) [0x746795]
+	chromedriver!(No symbol) [0x732bd7]
+	KERNEL32!BaseThreadInitThunk [0x76d45d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c0e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c0e181+231]
+
+Scraped 0 auction plates.
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 99, in main
+    driver.execute_script("selectTab('3');")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 414, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: selectTab is not defined
+  (Session info: chrome=153.0.8010.54)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x821c73+4e33]
+	chromedriver!(No symbol) [0x73d194]
+	chromedriver!(No symbol) [0x57c0b0]
+	chromedriver!(No symbol) [0x582edd]
+	chromedriver!(No symbol) [0x5851cf]
+	chromedriver!(No symbol) [0x609d56]
+	chromedriver!(No symbol) [0x5e9aac]
+	chromedriver!(No symbol) [0x608ff3]
+	chromedriver!(No symbol) [0x5e9846]
+	chromedriver!(No symbol) [0x5bbe6a]
+	chromedriver!(No symbol) [0x5bcb44]
+	chromedriver!GetHandleVerifier [0xc8798a+46ab4a]
+	chromedriver!GetHandleVerifier [0xca946b+48c62b]
+	chromedriver!GetHandleVerifier [0x9442c2+127482]
+	chromedriver!GetHandleVerifier [0x94afd3+12e193]
+	chromedriver!(No symbol) [0x74b2b8]
+	chromedriver!(No symbol) [0x7465e8]
+	chromedriver!(No symbol) [0x746795]
+	chromedriver!(No symbol) [0x732bd7]
+	KERNEL32!BaseThreadInitThunk [0x76d45d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77c0e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77c0e181+231]
+
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Cantone Ticino - Pagina non disponibile
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 6876
+Contains 'tabContent': False
+Debug HTML saved
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[1]/td[2]"}
+  (Session info: chrome=153.0.8010.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xe91c73+4e33]
+	chromedriver!(No symbol) [0xdad194]
+	chromedriver!(No symbol) [0xbec0b0]
+	chromedriver!(No symbol) [0xc37066]
+	chromedriver!(No symbol) [0xc3723b]
+	chromedriver!(No symbol) [0xc7b782]
+	chromedriver!(No symbol) [0xc59af4]
+	chromedriver!(No symbol) [0xc78ff3]
+	chromedriver!(No symbol) [0xc59846]
+	chromedriver!(No symbol) [0xc2be6a]
+	chromedriver!(No symbol) [0xc2cb44]
+	chromedriver!GetHandleVerifier [0x12f798a+46ab4a]
+	chromedriver!GetHandleVerifier [0x131946b+48c62b]
+	chromedriver!GetHandleVerifier [0xfb42c2+127482]
+	chromedriver!GetHandleVerifier [0xfbafd3+12e193]
+	chromedriver!(No symbol) [0xdbb2b8]
+	chromedriver!(No symbol) [0xdb65e8]
+	chromedriver!(No symbol) [0xdb6795]
+	chromedriver!(No symbol) [0xda2bd7]
+	KERNEL32!BaseThreadInitThunk [0x766e5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a7e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a7e181+231]
+
+Scraped 0 auction plates.
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 99, in main
+    driver.execute_script("selectTab('3');")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 414, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: selectTab is not defined
+  (Session info: chrome=153.0.8010.54)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xe91c73+4e33]
+	chromedriver!(No symbol) [0xdad194]
+	chromedriver!(No symbol) [0xbec0b0]
+	chromedriver!(No symbol) [0xbf2edd]
+	chromedriver!(No symbol) [0xbf51cf]
+	chromedriver!(No symbol) [0xc79d56]
+	chromedriver!(No symbol) [0xc59aac]
+	chromedriver!(No symbol) [0xc78ff3]
+	chromedriver!(No symbol) [0xc59846]
+	chromedriver!(No symbol) [0xc2be6a]
+	chromedriver!(No symbol) [0xc2cb44]
+	chromedriver!GetHandleVerifier [0x12f798a+46ab4a]
+	chromedriver!GetHandleVerifier [0x131946b+48c62b]
+	chromedriver!GetHandleVerifier [0xfb42c2+127482]
+	chromedriver!GetHandleVerifier [0xfbafd3+12e193]
+	chromedriver!(No symbol) [0xdbb2b8]
+	chromedriver!(No symbol) [0xdb65e8]
+	chromedriver!(No symbol) [0xdb6795]
+	chromedriver!(No symbol) [0xda2bd7]
+	KERNEL32!BaseThreadInitThunk [0x766e5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a7e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a7e181+231]
+
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 49450
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 8:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[15]/td[2]"}
+  (Session info: chrome=153.0.8010.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x701c73+4e33]
+	chromedriver!(No symbol) [0x61d194]
+	chromedriver!(No symbol) [0x45c0b0]
+	chromedriver!(No symbol) [0x4a7066]
+	chromedriver!(No symbol) [0x4a723b]
+	chromedriver!(No symbol) [0x4eb782]
+	chromedriver!(No symbol) [0x4c9af4]
+	chromedriver!(No symbol) [0x4e8ff3]
+	chromedriver!(No symbol) [0x4c9846]
+	chromedriver!(No symbol) [0x49be6a]
+	chromedriver!(No symbol) [0x49cb44]
+	chromedriver!GetHandleVerifier [0xb6798a+46ab4a]
+	chromedriver!GetHandleVerifier [0xb8946b+48c62b]
+	chromedriver!GetHandleVerifier [0x8242c2+127482]
+	chromedriver!GetHandleVerifier [0x82afd3+12e193]
+	chromedriver!(No symbol) [0x62b2b8]
+	chromedriver!(No symbol) [0x6265e8]
+	chromedriver!(No symbol) [0x626795]
+	chromedriver!(No symbol) [0x612bd7]
+	KERNEL32!BaseThreadInitThunk [0x760c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x7708e1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x7708e181+231]
+
+Scraped 2 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 49450
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 8:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[15]/td[2]"}
+  (Session info: chrome=153.0.8010.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x4c1c73+4e33]
+	chromedriver!(No symbol) [0x3dd194]
+	chromedriver!(No symbol) [0x21c0b0]
+	chromedriver!(No symbol) [0x267066]
+	chromedriver!(No symbol) [0x26723b]
+	chromedriver!(No symbol) [0x2ab782]
+	chromedriver!(No symbol) [0x289af4]
+	chromedriver!(No symbol) [0x2a8ff3]
+	chromedriver!(No symbol) [0x289846]
+	chromedriver!(No symbol) [0x25be6a]
+	chromedriver!(No symbol) [0x25cb44]
+	chromedriver!GetHandleVerifier [0x92798a+46ab4a]
+	chromedriver!GetHandleVerifier [0x94946b+48c62b]
+	chromedriver!GetHandleVerifier [0x5e42c2+127482]
+	chromedriver!GetHandleVerifier [0x5eafd3+12e193]
+	chromedriver!(No symbol) [0x3eb2b8]
+	chromedriver!(No symbol) [0x3e65e8]
+	chromedriver!(No symbol) [0x3e6795]
+	chromedriver!(No symbol) [0x3d2bd7]
+	KERNEL32!BaseThreadInitThunk [0x758c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x773fe1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x773fe181+231]
+	(No symbol) [(nil)]
+
+Scraped 2 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Asta targhe
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 49454
+Contains 'tabContent': True
+Debug HTML saved
+DEBUG row 1:
+  .text: '1'000'
+  innerText: '1'000'
+  textContent: '1'000'
+  innerHTML: '1'000'
+  Visible: True
+DEBUG row 8:
+  .text: '600'
+  innerText: '600'
+  textContent: '600'
+  innerHTML: '600'
+  Visible: True
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[15]/td[2]"}
+  (Session info: chrome=153.0.8010.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0xb61c73+4e33]
+	chromedriver!(No symbol) [0xa7d194]
+	chromedriver!(No symbol) [0x8bc0b0]
+	chromedriver!(No symbol) [0x907066]
+	chromedriver!(No symbol) [0x90723b]
+	chromedriver!(No symbol) [0x94b782]
+	chromedriver!(No symbol) [0x929af4]
+	chromedriver!(No symbol) [0x948ff3]
+	chromedriver!(No symbol) [0x929846]
+	chromedriver!(No symbol) [0x8fbe6a]
+	chromedriver!(No symbol) [0x8fcb44]
+	chromedriver!GetHandleVerifier [0xfc798a+46ab4a]
+	chromedriver!GetHandleVerifier [0xfe946b+48c62b]
+	chromedriver!GetHandleVerifier [0xc842c2+127482]
+	chromedriver!GetHandleVerifier [0xc8afd3+12e193]
+	chromedriver!(No symbol) [0xa8b2b8]
+	chromedriver!(No symbol) [0xa865e8]
+	chromedriver!(No symbol) [0xa86795]
+	chromedriver!(No symbol) [0xa72bd7]
+	KERNEL32!BaseThreadInitThunk [0x758c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x773fe1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x773fe181+231]
+
+Scraped 2 auction plates.
+Testing Ticino site directly...
+=== DEBUG ===
+Title: Cantone Ticino - Pagina non disponibile
+URL after load: https://www.carieauktion.ti.ch/ecari-auktion/ui/app/init
+Page source length: 6876
+Contains 'tabContent': False
+Debug HTML saved
+Failed: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="tabContent1"]/div/div/div[1]/table/tbody/tr[1]/td[2]"}
+  (Session info: chrome=153.0.8010.54); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x1021c73+4e33]
+	chromedriver!(No symbol) [0xf3d194]
+	chromedriver!(No symbol) [0xd7c0b0]
+	chromedriver!(No symbol) [0xdc7066]
+	chromedriver!(No symbol) [0xdc723b]
+	chromedriver!(No symbol) [0xe0b782]
+	chromedriver!(No symbol) [0xde9af4]
+	chromedriver!(No symbol) [0xe08ff3]
+	chromedriver!(No symbol) [0xde9846]
+	chromedriver!(No symbol) [0xdbbe6a]
+	chromedriver!(No symbol) [0xdbcb44]
+	chromedriver!GetHandleVerifier [0x148798a+46ab4a]
+	chromedriver!GetHandleVerifier [0x14a946b+48c62b]
+	chromedriver!GetHandleVerifier [0x11442c2+127482]
+	chromedriver!GetHandleVerifier [0x114afd3+12e193]
+	chromedriver!(No symbol) [0xf4b2b8]
+	chromedriver!(No symbol) [0xf465e8]
+	chromedriver!(No symbol) [0xf46795]
+	chromedriver!(No symbol) [0xf32bd7]
+	KERNEL32!BaseThreadInitThunk [0x758c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x773fe1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x773fe181+231]
+
+Scraped 0 auction plates.
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 166, in <module>
+    main()
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 99, in main
+    driver.execute_script("selectTab('3');")
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 414, in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 354, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\manue\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.JavascriptException: Message: javascript error: selectTab is not defined
+  (Session info: chrome=153.0.8010.54)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x1021c73+4e33]
+	chromedriver!(No symbol) [0xf3d194]
+	chromedriver!(No symbol) [0xd7c0b0]
+	chromedriver!(No symbol) [0xd82edd]
+	chromedriver!(No symbol) [0xd851cf]
+	chromedriver!(No symbol) [0xe09d56]
+	chromedriver!(No symbol) [0xde9aac]
+	chromedriver!(No symbol) [0xe08ff3]
+	chromedriver!(No symbol) [0xde9846]
+	chromedriver!(No symbol) [0xdbbe6a]
+	chromedriver!(No symbol) [0xdbcb44]
+	chromedriver!GetHandleVerifier [0x148798a+46ab4a]
+	chromedriver!GetHandleVerifier [0x14a946b+48c62b]
+	chromedriver!GetHandleVerifier [0x11442c2+127482]
+	chromedriver!GetHandleVerifier [0x114afd3+12e193]
+	chromedriver!(No symbol) [0xf4b2b8]
+	chromedriver!(No symbol) [0xf465e8]
+	chromedriver!(No symbol) [0xf46795]
+	chromedriver!(No symbol) [0xf32bd7]
+	KERNEL32!BaseThreadInitThunk [0x758c5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x773fe1fb+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x773fe181+231]
+
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 4, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 4, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
+Traceback (most recent call last):
+  File "C:\Users\manue\Desktop\MyProjects\TI plates scraper\src\ti_plates_scraper.py", line 4, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
