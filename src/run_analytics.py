@@ -59,6 +59,23 @@ for name, query in checks.items():
     status = "PASS" if count == 0 else "FAIL"
     print(f"[{status}] {name}: {count}")
 
+
+print("\nDEADLINE FORMAT DISTRIBUTION")
+
+rows = con.execute("""
+    SELECT
+        deadline_format,
+        COUNT(*) AS observations
+    FROM analytics_snapshots
+    WHERE listing_type = 'auction'
+    GROUP BY deadline_format
+    ORDER BY observations DESC
+""").fetchall()
+
+for deadline_format, count in rows:
+    print(f"{deadline_format}: {count}")
+
+
 # 3. Stop pipeline if critical checks fail
 if any(count > 0 for count in results.values()):
     con.close()
