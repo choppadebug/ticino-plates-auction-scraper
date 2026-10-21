@@ -40,18 +40,14 @@ checks = {
            OR current_offer < 0
     """,
 
+    
     "invalid_deadlines": """
         SELECT COUNT(*)
         FROM analytics_snapshots
         WHERE listing_type = 'auction'
-          AND time_to_go_label IS NOT NULL
-          AND TRIM(time_to_go_label) NOT IN ('', 'N/A')
-          AND auction_end_date IS NULL
-          AND NOT regexp_matches(
-              time_to_go_label,
-              '[0-9]{1,2}:[0-9]{2}:[0-9]{2}'
-          )
+        AND deadline_format = 'unknown'
     """,
+
 }
 
 results = {}

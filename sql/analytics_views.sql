@@ -5,10 +5,7 @@ WITH normalized AS (
     SELECT
         *,
         regexp_replace(
-            plate_number,
-            '[^0-9]',
-            '',
-            'g'
+            plate_number, '[^0-9]', '', 'g'
         ) AS plate_key,
 
         CAST(
@@ -19,6 +16,36 @@ WITH normalized AS (
         ) AS auction_end_date
 
     FROM snapshots
+),
+
+classified AS (
+    SELECT
+        *,
+        CASE
+            WHEN time_to_go_label IS NULL
+              OR UPPER(TRIM(time_to_go_label))
+                 IN ('', 'N/A', 'NA', 'NULL', 'NONE')
+            THEN 'not_available'
+
+            WHEN auction_end_date IS NOT NULL
+            THEN 'absolute_date'
+
+            WHEN regexp_full_match(
+                LOWER(TRIM(time_to_go_label)),
+                'heute +([01]?[0-9]|2[0-3]):[0-5][0-9]'
+            )
+            THEN 'relative_today'
+
+            WHEN regexp_matches(
+                time_to_go_label,
+                '[0-9]{1,2}:[0-9]{2}:[0-9]{2}'
+            )
+            THEN 'countdown'
+
+            ELSE 'unknown'
+        END AS deadline_format
+
+    FROM normalized
 )
 
 SELECT
@@ -35,18 +62,20 @@ SELECT
 
     time_to_go_label,
     auction_end_date,
+    deadline_format,
 
     CASE
-        WHEN auction_end_date IS NOT NULL
-        THEN NULL
-        ELSE time_to_go_seconds
+        WHEN deadline_format = 'countdown'
+        THEN time_to_go_seconds
+        ELSE NULL
     END AS countdown_seconds,
 
     source_file,
     scraped_at,
     scraped_date
 
-FROM normalized;
+FROM classified;
+
 
 
 CREATE OR REPLACE VIEW analytics_latest_plate AS
